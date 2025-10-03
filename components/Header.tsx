@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 
 const Header = () => {
   return (
-    <header className="fixed w-full bg-white">
+    <header className="fixed z-20 w-full bg-white">
       <div className="w-[90%] max-w-7xl py-6 flex flex-wrap md:flex-nowrap justify-between items-center mx-auto gap-4">
         <div>
           <Image src="/Logo.png" alt="Logo png" height={62} width={152} />
