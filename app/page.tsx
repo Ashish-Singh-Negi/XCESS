@@ -14,11 +14,11 @@ export default function Home() {
       {/* Hero Section */}
       <div className="min-h-[600px] sm:min-h-[800px] lg:min-h-[1024px] w-full bg-[url('/Couple.png')] bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28">
         <div className="px-6 sm:px-12 lg:px-24 py-10 md:py-20 lg:py-32 sm:text-left">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%] mx-auto sm:mx-0">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%]">
             &quot;We Handle,
             <br /> Your Travel&quot;
           </h1>
-          <p className="text-white mt-6 sm:mt-8 text-sm sm:text-base max-w-[90%] mx-auto sm:mx-0">
+          <p className="text-white mt-6 sm:mt-8 text-sm sm:text-base max-w-[90%]">
             From your doorstep to your destination, we handle <br /> every bag
             with care.
           </p>

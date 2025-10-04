@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { CiMail } from "react-icons/ci";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
-import { FaX } from "react-icons/fa6";
+import { RiTwitterXLine } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -16,14 +16,14 @@ const Footer = () => {
             className="mx-auto lg:mx-0"
           />
           <div className="h-[52px] w-full flex gap-4 sm:gap-6 lg:gap-8 pl-4 sm:pl-6 lg:pl-8 mt-5 justify-center lg:justify-start">
-            <div className="size-[52px] bg-primary rounded-full flex justify-center items-center">
+            <div className="size-[52px] bg-primary text-black rounded-full flex justify-center items-center">
               <FaInstagram size={32} />
             </div>
-            <div className="size-[52px] bg-primary rounded-full flex justify-center items-center">
+            <div className="size-[52px] bg-primary text-black rounded-full flex justify-center items-center">
               <FaYoutube size={32} />
             </div>
-            <div className="size-[52px] bg-primary rounded-full flex justify-center items-center">
-              <FaX size={32} />
+            <div className="size-[52px] bg-primary text-black rounded-full flex justify-center items-center">
+              <RiTwitterXLine size={32} />
             </div>
           </div>
         </div>
