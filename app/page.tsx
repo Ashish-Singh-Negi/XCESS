@@ -149,9 +149,9 @@ export default function Home() {
           Simple Steps
         </span>
 
-        <main className="flex flex-col lg:flex-row items-center gap-4 mt-24 mb-20">
+        <main className="flex flex-col lg:flex-row items-center mt-24 mb-20">
           {/* Step 1 */}
-          <div className="flex flex-col items-center justify-between h-80 w-64">
+          <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
             <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
               1
             </div>
@@ -169,7 +169,7 @@ export default function Home() {
           <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
 
           {/* Step 2 */}
-          <div className="flex flex-col items-center justify-between h-80 w-64">
+          <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
             <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
               2
             </div>
@@ -182,7 +182,7 @@ export default function Home() {
           <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
 
           {/* Step 3 */}
-          <div className="flex flex-col items-center justify-between h-80 w-64">
+          <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
             <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
               3
             </div>
@@ -200,7 +200,7 @@ export default function Home() {
           <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
 
           {/* Step 4 */}
-          <div className="flex flex-col items-center justify-between h-80 w-64">
+          <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
             <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
               4
             </div>
@@ -212,7 +212,7 @@ export default function Home() {
         </main>
       </div>
 
-      <div className="w-full py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
+      <div className="w-full sm:py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center px-4">
           About US
         </h2>
