@@ -1,6 +1,6 @@
 const NavBar = () => {
   return (
-    <div className="flex flex-wrap justify-center md:justify-start gap-2 text-black">
+    <div className="hidden lg:flex flex-wrap justify-center md:justify-start gap-2 text-black">
       <button className="px-6 py-2 bg-yellow-400 rounded-3xl font-medium cursor-pointer">
         Home
       </button>
