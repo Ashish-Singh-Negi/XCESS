@@ -122,7 +122,7 @@ export default function Home() {
         </div>
 
         {/* Why Choose Us */}
-        <p className="w-96 mx-auto border-b-2 border-primary mt-20"></p>
+        <p className="h-0.5 w-3/4 sm:w-96 bg-primary mt-20 mx-auto rounded-b-full"></p>
         <div className="w-[80%] py-28 px-6 sm:px-12 lg:px-40 text-center sm:text-left">
           <h1 className="text-4xl sm:text-6xl font-bold leading-tight">
             Why <span className="text-primary">should</span> <br />
@@ -145,7 +145,7 @@ export default function Home() {
             )}
           </div>
         </div>
-        <p className="w-96 mx-auto border-b-2 border-primary -mt-4"></p>
+        <p className="h-0.5 w-3/4 sm:w-96 bg-primary -mt-4 mx-auto rounded-b-full"></p>
 
         <div className="w-[80%] py-20 flex flex-col items-center">
           <p className="text-[24px] font-medium text-primary">
