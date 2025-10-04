@@ -143,11 +143,14 @@ export default function Home() {
       </div>
       <p className="h-0.5 w-3/4 sm:w-96 bg-primary -mt-4 mx-auto rounded-b-full"></p>
 
-      <div className="w-[80%] py-20 flex flex-col items-center">
+      <div className="relative w-full py-20 flex flex-col items-center overflow-hidden">
         <p className="text-[24px] font-medium text-primary">Just follow some</p>
         <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-center">
           Simple Steps
         </span>
+
+        <div className="absolute -z-10 -top-40 -right-[460px] size-[800px] bg-[#FFF56926] rounded-full"></div>
+        <div className="absolute -z-10 -bottom-[620px] -left-[560px] size-[1060px] bg-[#FEFFEF] rounded-full"></div>
 
         <main className="flex flex-col lg:flex-row items-center mt-24 mb-20">
           {/* Step 1 */}
@@ -212,7 +215,7 @@ export default function Home() {
         </main>
       </div>
 
-      <div className="w-full sm:py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
+      <div className="w-full py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center px-4">
           About US
         </h2>
