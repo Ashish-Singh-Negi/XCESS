@@ -123,7 +123,7 @@ export default function Home() {
 
         {/* Why Choose Us */}
         <p className="h-0.5 w-3/4 sm:w-96 bg-primary mt-20 mx-auto rounded-b-full"></p>
-        <div className="w-[80%] py-28 px-6 sm:px-12 lg:px-40 text-center sm:text-left">
+        <div className="w-[80%] py-28 px-6 sm:px-12 lg:px-40 sm:text-left">
           <h1 className="text-4xl sm:text-6xl font-bold leading-tight">
             Why <span className="text-primary">should</span> <br />
             <span className="text-primary">you</span> choose US?

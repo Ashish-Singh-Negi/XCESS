@@ -11,13 +11,14 @@ const CustomSelect = ({
   options: string[];
 }) => {
   const [open, setOpen] = useState(false);
+  const [selectedOption, setSelectedOpen] = useState(title);
   return (
     <>
       <button
         onClick={() => setOpen(!open)}
         className="relative h-[72px] cursor-pointer w-full sm:w-72 border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-xl flex items-center justify-between"
       >
-        {title}
+        {selectedOption}
         {open ? (
           <Image
             className="rotate-180 transition-transform"
@@ -43,6 +44,7 @@ const CustomSelect = ({
             {options.map((option) => (
               <p
                 key={option}
+                onClick={() => setSelectedOpen(option)}
                 className="w-full px-4 py-2 hover:bg-primary/20 rounded-lg text-start"
               >
                 {option}
