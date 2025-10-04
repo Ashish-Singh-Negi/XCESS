@@ -1,19 +1,26 @@
 import CustomSelect from "@/components/CustomSelect";
 import Header from "@/components/Header";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
+import { BiSolidQuoteAltLeft } from "react-icons/bi";
+import { CiMail } from "react-icons/ci";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaX } from "react-icons/fa6";
 import { GoPlus } from "react-icons/go";
+import { IoIosArrowForward } from "react-icons/io";
+import { TiStarFullOutline } from "react-icons/ti";
 
 export default function Home() {
   return (
     <div className="min-h-screen w-full">
       <Header />
-      <main className="w-full">
+      <main className="w-full flex flex-col items-center">
         {/* Hero Section */}
         <div className="min-h-[600px] sm:min-h-[800px] lg:min-h-[1024px] w-full bg-[url('/Couple.png')] bg-center bg-cover bg-no-repeat pt-28">
           <div className="px-6 sm:px-12 lg:px-24 py-10 md:py-20 lg:py-32 text-center sm:text-left">
             <h1 className="text-4xl sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%] mx-auto sm:mx-0">
-              "We Handle,
-              <br /> Your Travel"
+              &quot;We Handle,
+              <br /> Your Travel&quot;
             </h1>
             <p className="text-white mt-6 sm:mt-8 text-sm sm:text-base max-w-[90%] mx-auto sm:mx-0">
               From your doorstep to your destination, we handle <br /> every bag
@@ -84,7 +91,7 @@ export default function Home() {
         </div>
 
         {/* Service Categories */}
-        <div className="w-full pt-40 px-6 sm:px-12 lg:px-24 flex flex-col items-center text-center">
+        <div className="w-[80%] pt-40 px-6 sm:px-12 lg:px-24 flex flex-col items-center text-center">
           <h2 className="text-4xl sm:text-5xl font-semibold">
             Our Service Categories
           </h2>
@@ -114,9 +121,9 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="w-96 mx-auto border-b-2 border-primary mt-20"></p>
         {/* Why Choose Us */}
-        <div className="w-full py-28 px-6 sm:px-12 lg:px-60 text-center sm:text-left">
+        <p className="w-96 mx-auto border-b-2 border-primary mt-20"></p>
+        <div className="w-[80%] py-28 px-6 sm:px-12 lg:px-40 text-center sm:text-left">
           <h1 className="text-4xl sm:text-6xl font-bold leading-tight">
             Why <span className="text-primary">should</span> <br />
             <span className="text-primary">you</span> choose US?
@@ -138,13 +145,207 @@ export default function Home() {
             )}
           </div>
         </div>
-
         <p className="w-96 mx-auto border-b-2 border-primary -mt-4"></p>
 
-        {/* Footer */}
-        <div className="h-40 w-full bg-white text-center flex items-center justify-center text-white font-semibold px-4">
-          Radhe Radhe
+        <div className="w-[80%] py-20 flex flex-col items-center">
+          <p className="text-[24px] font-medium text-primary">
+            Just follow some
+          </p>
+          <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-center">
+            Simple Steps
+          </span>
+
+          <main className="flex flex-col lg:flex-row items-center gap-4 mt-24 mb-20">
+            {/* Step 1 */}
+            <div className="flex flex-col items-center justify-between h-80 w-64">
+              <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
+                1
+              </div>
+              <Image
+                src="/Book-Online.png"
+                alt="Book Online Icon"
+                height={122}
+                width={122}
+              />
+              <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+                Book <br /> Online
+              </p>
+            </div>
+
+            <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
+
+            {/* Step 2 */}
+            <div className="flex flex-col items-center justify-between h-80 w-64">
+              <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
+                2
+              </div>
+              <Image src="/Bag.png" alt="Bag Icon" height={122} width={122} />
+              <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+                We Collect <br /> Your Bag
+              </p>
+            </div>
+
+            <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
+
+            {/* Step 3 */}
+            <div className="flex flex-col items-center justify-between h-80 w-64">
+              <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
+                3
+              </div>
+              <Image
+                src="/Security.png"
+                alt="Security Icon"
+                height={122}
+                width={122}
+              />
+              <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+                Secure Delivery <br /> to Destination
+              </p>
+            </div>
+
+            <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
+
+            {/* Step 4 */}
+            <div className="flex flex-col items-center justify-between h-80 w-64">
+              <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
+                4
+              </div>
+              <Image src="/Van.png" alt="Van Icon" height={122} width={122} />
+              <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+                Track Your <br /> Shipment
+              </p>
+            </div>
+          </main>
         </div>
+
+        <div className="w-full py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center px-4">
+            About US
+          </h2>
+
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mt-10 text-center font-medium max-w-[90%] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] px-4">
+            Xcess Luggage makes travel simpler, lighter, and stress-free. We
+            specialize in door-to-door baggage delivery, helping you skip queues
+            and heavy lifting. Our service covers major Indian cities, ensuring
+            your bags arrive safely and on time. With secure handling, and
+            real-time tracking, we’re redefining convenience for travelers.
+            Whether it’s weddings, business trips, family vacations, or student
+            relocations, Xcess Luggage ensures your journey stays hassle-free
+            from start to finish.
+          </p>
+        </div>
+
+        <div className="w-full my-20 py-10 flex flex-col items-center">
+          <h2 className="w-[80%] text-4xl mb-20 px-4 sm:px-10 md:px-20 lg:px-40 xl:px-40">
+            <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
+              What <span className="text-primary">People Say ?</span>
+            </p>
+            <span className="text-base sm:text-lg md:text-xl text-gray-600">
+              who trusted us with their luggage
+            </span>
+          </h2>
+
+          <Marquee className="h-36 w-full flex gap-4 overflow-y-visible">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => (
+              <div
+                key={num}
+                className="relative shrink-0 overflow-y-visible h-auto w-64 sm:w-72 px-2 flex flex-col justify-around bg-white rounded-lg"
+              >
+                <BiSolidQuoteAltLeft
+                  size={16}
+                  className="absolute -top-1 -left-1 text-primary"
+                />
+                <p className="py-1 text-[#697981] text-sm sm:text-base">
+                  I&apos;ve been a member for 2 years and can&apos;t be more
+                  satisfied. I&apos;ve learned so much!
+                </p>
+                <div className="h-11 flex items-center">
+                  <div className="size-11 rounded-full bg-red-200 bg-[url('/Pic3.jpg')] bg-no-repeat bg-cover"></div>
+                  <div className="ml-2">
+                    <p className="font-medium text-sm sm:text-base">Apple G</p>
+                    <div className="h-5 -mt-0.5 flex">
+                      {[...Array(5)].map((_, i) => (
+                        <TiStarFullOutline
+                          key={i}
+                          className="text-primary"
+                          size={20}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+        <p className="h-0.5 w-3/4 sm:w-96 bg-primary mb-10 -mt-10 mx-auto rounded-b-full"></p>
+
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center gap-10 py-20 px-4 sm:px-8">
+          <p className="text-3xl sm:text-4xl md:text-5xl font-medium text-center leading-snug">
+            Ready to Travel Light <br /> without worrying about that extra
+            luggage?
+          </p>
+          <button className="border-2 border-[#FFF235] text-xl sm:text-2xl md:text-4xl font-semibold py-4 px-10 sm:px-20 md:px-60 rounded-3xl bg-[#FFD008] cursor-pointer active:scale-x-100 hover:scale-x-105 transition-transform">
+            Book now !
+          </button>
+        </div>
+
+        <div className="h-20 w-full bg-primary"></div>
+
+        <footer className="w-full px-4 sm:px-8 md:px-[60px] lg:px-[120px] flex flex-col lg:flex-row justify-between py-16 sm:py-20 md:py-24 bg-[#2B2A29] gap-12">
+          <div className="w-full lg:w-[268px]">
+            <Image
+              src={"/Logo-White.png"}
+              alt="logo png"
+              height={104}
+              width={268}
+              className="mx-auto lg:mx-0"
+            />
+            <div className="h-[52px] w-full flex gap-4 sm:gap-6 lg:gap-8 pl-4 sm:pl-6 lg:pl-8 mt-5 justify-center lg:justify-start">
+              <div className="size-[52px] bg-primary rounded-full flex justify-center items-center">
+                <FaInstagram size={32} />
+              </div>
+              <div className="size-[52px] bg-primary rounded-full flex justify-center items-center">
+                <FaYoutube size={32} />
+              </div>
+              <div className="size-[52px] bg-primary rounded-full flex justify-center items-center">
+                <FaX size={32} />
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-[268px] flex flex-col justify-start pt-6 lg:pt-10 text-base sm:text-lg text-[#ABABAB]">
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
+              CONTACT US
+            </h2>
+            <p>xyz@gmail.com</p>
+            <p>
+              24 Mumbai, Maharashtra,
+              <br /> 403 503
+            </p>
+            <p>+ 3827493470</p>
+          </div>
+
+          <div className="w-full lg:w-80 flex flex-col justify-start pt-6 lg:pt-10 text-base sm:text-lg text-[#ABABAB]">
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">
+              SUBSCRIBE
+            </h2>
+            <p className="mb-4">
+              Enter your email to get notified about our new solutions
+            </p>
+            <div className="relative flex w-full">
+              <input
+                type="text"
+                placeholder="Email"
+                className="rounded-2xl h-[52px] w-full text-[#9A9A9A] bg-[#616161] outline-none pl-4 pr-8"
+              />
+              <CiMail
+                size={24}
+                className="absolute right-2 top-3.5 text-primary"
+              />
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
