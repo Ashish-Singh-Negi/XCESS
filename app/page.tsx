@@ -7,6 +7,7 @@ import { TiStarFullOutline } from "react-icons/ti";
 import { IoIosArrowForward } from "react-icons/io";
 
 import CustomSelect from "@/components/CustomSelect";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -40,9 +41,12 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <button className="h-10 rounded-3xl bg-primary px-6 sm:px-10 font-semibold text-sm sm:text-base cursor-pointer hover:scale-105 active:scale-100 transition-all">
+            <Link
+              href={"/book"}
+              className="h-10 rounded-3xl bg-primary px-6 sm:px-10 font-semibold text-sm sm:text-base cursor-pointer hover:scale-105 active:scale-100 transition-all"
+            >
               Book Now!
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -282,9 +286,12 @@ export default function Home() {
           Ready to Travel Light <br /> without worrying about that extra
           luggage?
         </p>
-        <button className="border-2 border-[#FFF235] text-xl sm:text-2xl md:text-4xl font-semibold py-4 px-10 sm:px-20 md:px-60 rounded-3xl bg-[#FFD008] cursor-pointer active:scale-x-100 hover:scale-x-105 transition-transform">
+        <Link
+          href={"/book"}
+          className="border-2 border-[#FFF235] text-xl sm:text-2xl md:text-4xl font-semibold py-4 px-10 sm:px-20 md:px-60 rounded-3xl bg-[#FFD008] cursor-pointer active:scale-x-100 hover:scale-x-105 transition-transform"
+        >
           Book now !
-        </button>
+        </Link>
       </div>
     </main>
   );

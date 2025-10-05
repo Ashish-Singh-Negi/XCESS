@@ -1,9 +1,10 @@
 import Image from "next/image";
 import NavBar from "./NavBar";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="fixed z-20 w-full bg-white">
+    <header className="fixed z-20 w-full bg-white border-b-2 border-[#E2E2E2]">
       <div className="w-[90%] max-w-7xl py-4 sm:py-6 flex sm:flex-wrap md:flex-nowrap justify-between items-center mx-auto gap-4">
         <Image
           src="/Logo.png"
@@ -16,9 +17,12 @@ const Header = () => {
         <div className="flex flex-col md:flex-row items-center gap-4 md:w-auto">
           <NavBar />
           <div className="flex gap-4">
-            <button className="py-2 px-6 bg-yellow-400 text-black rounded-3xl font-medium hover:scale-105 transition-transform cursor-pointer active:scale-100">
+            <Link
+              href={"/book"}
+              className="py-2 px-6 bg-yellow-400 text-black rounded-3xl font-medium hover:scale-105 transition-transform cursor-pointer active:scale-100"
+            >
               Book Now
-            </button>
+            </Link>
             <div className="w-10 h-10 rounded-full bg-black"></div>
           </div>
         </div>
