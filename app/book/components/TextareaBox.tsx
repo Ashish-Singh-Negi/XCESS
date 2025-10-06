@@ -24,7 +24,7 @@ const TextareaBox = ({
         </label>
         <textarea
           placeholder={placeholder}
-          className="block h-32 w-full rounded-2xl outline-none border-2 border-[#B5B5B5] px-5 py-2 focus-within:border-primary text-lg mt-4 resize-none"
+          className="block h-32 w-full rounded-2xl outline-none border-2 border-[#B5B5B5] px-3 py-2 focus-within:border-primary text-lg mt-4 resize-none"
         />
       </div>
     </div>
