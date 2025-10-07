@@ -43,7 +43,7 @@ export default function Home() {
             </div>
             <Link
               href={"/book"}
-              className="rounded-3xl bg-primary py-2 px-6 sm:px-10 font-bold text-sm sm:text-base cursor-pointer hover:scale-105 active:scale-100 transition-all"
+              className="rounded-3xl bg-primary py-2 px-6 sm:px-10 font-bold text-sm sm:text-base cursor-pointer hover:scale-105 active:scale-100 transition-all flex justify-center"
             >
               Book Now!
             </Link>

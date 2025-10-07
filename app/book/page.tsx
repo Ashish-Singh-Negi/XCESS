@@ -6,6 +6,7 @@ import { useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import TripDetails from "./components/TripDetails";
 import AddPackages from "./components/AddPackages";
+import BookingDetails from "./components/BookingDetails";
 
 const bookingStages = [
   {
@@ -25,7 +26,7 @@ const bookingStages = [
   },
   {
     name: "Payment",
-    Component: <>Payment</>,
+    Component: <BookingDetails />,
     isComplete: false,
   },
 ];
