@@ -128,7 +128,7 @@ const AddPackages = () => {
               </div>
               <p className="size-[12px] mt-2">
                 <Image
-                  src="/icons/comment-info.svg"
+                  src="/icons/Comment-info.svg"
                   alt="comment info icon"
                   height={16}
                   width={16}
@@ -170,7 +170,7 @@ const AddPackages = () => {
               </div>
               <p className="size-[12px] mt-2">
                 <Image
-                  src="/icons/comment-info.svg"
+                  src="/icons/Comment-info.svg"
                   alt="comment info icon"
                   height={16}
                   width={16}
