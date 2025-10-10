@@ -71,7 +71,7 @@ const AboutPage = () => {
             ornare leo, non suscipit magna interdum eu. Curabitur pellentesque
             nibh nibh, at maximus ante fermentum sit amet
           </p>
-          <div className="flex flex-col-reverse lg:flex-row justify-center items-center gap-10 mt-10 sm:mt-20">
+          <div className="flex flex-col-reverse lg:flex-row justify-center gap-10 mt-10 sm:mt-20">
             <div className="flex flex-col gap-6 sm:gap-10 max-w-xl">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et
