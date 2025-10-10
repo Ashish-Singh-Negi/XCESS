@@ -22,7 +22,7 @@ const trackStages = [
   },
 ];
 
-const page = () => {
+const TrackingDashboardPage = () => {
   const [currentTacking, setCurrentTecking] = useState(0);
 
   return (
@@ -229,4 +229,4 @@ const page = () => {
     </main>
   );
 };
-export default page;
+export default TrackingDashboardPage;

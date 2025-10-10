@@ -1,6 +1,5 @@
 "use client";
 
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import InputBox from "./InputBox";
 import TextareaBox from "./TextareaBox";
 import ToggleBtn from "./ToggleBtn";

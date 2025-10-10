@@ -1,4 +1,4 @@
-const page = () => {
-  return <div>page</div>;
+const PolicyPage = () => {
+  return <div>PolicyPage</div>;
 };
-export default page;
+export default PolicyPage;

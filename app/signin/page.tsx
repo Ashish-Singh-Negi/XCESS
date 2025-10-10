@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-const page = () => {
+const SigninPage = () => {
   const [eyeOpen, setEyeOpen] = useState(false);
 
   return (
@@ -81,7 +81,7 @@ const page = () => {
             </button>
           </div>
           <p className="text-sm text-[#626262] text-center font-medium">
-            Don't have a account?{" "}
+            Don&apos;t have a account?{" "}
             <Link href={"/signup"} className="text-[#2D81FF] cursor-pointer">
               Sign up
             </Link>
@@ -91,4 +91,4 @@ const page = () => {
     </section>
   );
 };
-export default page;
+export default SigninPage;
