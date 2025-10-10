@@ -34,6 +34,30 @@ const bookingStages = [
 const BookingPage = () => {
   const [currentBookingStage, setCurrentBookingStage] = useState(0);
 
+  const prevBookingStageHandler = () => {
+    if (currentBookingStage >= 1) {
+      setCurrentBookingStage((prev) => prev - 1);
+
+      bookingStages.map((stage) => {
+        if (stage.name === bookingStages[currentBookingStage - 1].name) {
+          stage.isComplete = false;
+        }
+      });
+    }
+  };
+
+  const nextBookingStageHandler = () => {
+    if (currentBookingStage < bookingStages.length - 1) {
+      setCurrentBookingStage((prev) => prev + 1);
+
+      bookingStages.map((stage) => {
+        if (stage.name === bookingStages[currentBookingStage].name) {
+          stage.isComplete = true;
+        }
+      });
+    }
+  };
+
   return (
     <>
       <div className="w-full min-h-[600px] sm:min-h-[800px] lg:min-h-[1024px] flex justify-center pt-[72px] md:pt-28">
@@ -140,47 +164,24 @@ const BookingPage = () => {
 
           {bookingStages[currentBookingStage].Component}
 
-          <section className="w-full flex justify-between mt-8 px-10">
-            <div></div>
-
+          <section className="w-full flex justify-end mt-8 px-10 ">
             <div className="flex gap-6 ">
-              <button
-                onClick={() => {
-                  if (currentBookingStage >= 1) {
-                    setCurrentBookingStage((prev) => prev - 1);
-
-                    bookingStages.map((stage) => {
-                      if (
-                        stage.name ===
-                        bookingStages[currentBookingStage - 1].name
-                      ) {
-                        stage.isComplete = false;
-                      }
-                    });
-                  }
-                }}
-                className="h-fit px-6 py-2 border-2 text-[#5D5D5D] border-[#707070] text-xl rounded-2xl font-medium flex items-center gap-2"
-              >
-                <GoArrowLeft size={24} /> Back
-              </button>
-              <button
-                onClick={() => {
-                  if (currentBookingStage < bookingStages.length - 1) {
-                    setCurrentBookingStage((prev) => prev + 1);
-
-                    bookingStages.map((stage) => {
-                      if (
-                        stage.name === bookingStages[currentBookingStage].name
-                      ) {
-                        stage.isComplete = true;
-                      }
-                    });
-                  }
-                }}
-                className="h-fit border-2 border-primary flex items-center gap-2 px-6 py-2 bg-primary text-xl rounded-2xl font-medium"
-              >
-                Next <GoArrowRight size={24} />
-              </button>
+              {currentBookingStage >= 1 && (
+                <button
+                  onClick={() => prevBookingStageHandler()}
+                  className="h-fit px-6 py-2 border-2 text-[#5D5D5D] border-[#707070] text-xl rounded-2xl font-medium flex items-center gap-2"
+                >
+                  <GoArrowLeft size={24} /> Back
+                </button>
+              )}
+              {currentBookingStage < 3 && (
+                <button
+                  onClick={() => nextBookingStageHandler()}
+                  className="h-fit border-2 border-primary flex items-center gap-2 px-6 py-2 bg-primary text-xl rounded-2xl font-medium"
+                >
+                  Next <GoArrowRight size={24} />
+                </button>
+              )}
             </div>
           </section>
         </main>

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
@@ -8,8 +10,12 @@ import { IoIosArrowForward } from "react-icons/io";
 
 import CustomSelect from "@/components/CustomSelect";
 import Link from "next/link";
+import SelectPackage from "./book/components/SelectPackage";
+import { useState } from "react";
 
 export default function Home() {
+  const [selectPackage, setSelectPackage] = useState(false);
+
   return (
     <main className="w-full flex flex-col items-center">
       {/* Hero Section */}
@@ -73,7 +79,10 @@ export default function Home() {
               options={selection.options}
             />
           ))}
-          <button className="h-[72px] w-full lg:w-96 border-2 border-[#BFBFBF] cursor-pointer focus-within:border-primary rounded-xl px-6 py-[22px] text-xl flex items-center justify-between">
+          <button
+            onClick={() => setSelectPackage(!selectPackage)}
+            className="relative h-[72px] w-full lg:w-96 border-2 border-[#BFBFBF] cursor-pointer focus-within:border-primary rounded-xl px-6 py-[22px] text-xl flex items-center justify-between"
+          >
             Choose Luggage
             <div className="size-6 mt-2">
               <Image
@@ -83,6 +92,11 @@ export default function Home() {
                 width={24}
               />
             </div>
+            {selectPackage && (
+              <div className="absolute z-10 top-[74px] left-0 cursor-default">
+                <SelectPackage />
+              </div>
+            )}
           </button>
         </div>
         <button className="font-semibold text-lg bg-primary px-10 sm:px-20 lg:px-40 py-2 mx-auto rounded-3xl hover:scale-x-105 active:scale-100 transition-all">

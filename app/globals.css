@@ -6,6 +6,18 @@
   --color-primary: #ffd008;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  appearance: textfield;
+}
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;

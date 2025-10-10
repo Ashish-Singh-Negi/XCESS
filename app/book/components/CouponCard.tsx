@@ -8,7 +8,7 @@ const CouponCard = () => {
             className="h-6 rounded-md outline-none bg-[#E3E3E3] py-0.5 px-2 text-[10px]"
             placeholder="Xcess123"
           />
-          <button className="px-2 py-1 rounded-lg text-[10px] bg-[#FFE163] ml-2">
+          <button className="px-2 py-1 cursor-pointer rounded-lg text-[10px] bg-[#FFE163] ml-2">
             Apply
           </button>
         </div>

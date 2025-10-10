@@ -39,6 +39,7 @@ const TripDetails = () => {
             label="Email Address"
             isRequired={false}
             placeholder="Enter email address"
+            type="email"
           />
         </div>
       </section>
