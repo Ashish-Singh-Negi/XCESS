@@ -11,15 +11,51 @@ import { IoIosArrowForward } from "react-icons/io";
 import CustomSelect from "@/components/CustomSelect";
 import Link from "next/link";
 import SelectPackage from "./book/components/SelectPackage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const defaultSlides = ["Cover1.png", "Cover2.jpg", "SmallCover3.png"];
+
+const mobileSlides = ["SmallCover1.png", "SmallCover2.png", "SmallCover3.png"];
 
 export default function Home() {
   const [selectPackage, setSelectPackage] = useState(false);
 
+  const [slides, setSlides] = useState(defaultSlides);
+  const [slideIndex, setSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      console.log(slides.length);
+      setSlideIndex((prev) => (prev + 1) % slides.length);
+    }, 4000);
+
+    return () => clearInterval(id);
+  }, [slides]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const viewport = window.innerWidth;
+      console.log("🚀 ~ Home ~ viewport:", viewport);
+
+      if (viewport < 640) setSlides(mobileSlides);
+      else setSlides(defaultSlides);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <main className="w-full flex flex-col items-center">
       {/* Hero Section */}
-      <div className="min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-[url('/Girl.png')] sm:bg-[url('/Couple.png')] bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28">
+
+      <section
+        style={{ backgroundImage: `url('${slides[slideIndex]}')` }}
+        className={`min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28`}
+      >
         <div className="px-6 sm:px-12 lg:px-24 py-20 md:py-20 lg:py-32 sm:text-left flex flex-col items-center sm:block">
           <h1 className="text-[40px] sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%]">
             &quot;We Handle,
@@ -55,7 +91,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Price Calculator */}
       <div className="w-[90%] sm:w-[80%] lg:max-w-6xl mx-auto rounded-4xl bg-white py-8 px-10 md:px-16 lg:px-20 -mt-32 sm:-mt-20 flex flex-col gap-8 shadow-xl">
@@ -79,7 +115,7 @@ export default function Home() {
               options={selection.options}
             />
           ))}
-          <button
+          <div
             onClick={() => setSelectPackage(!selectPackage)}
             className="relative h-[60px] sm:h-[72px] cursor-pointer w-full border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-base sm:text-xl flex items-center justify-between"
           >
@@ -96,7 +132,7 @@ export default function Home() {
                 <SelectPackage />
               </div>
             )}
-          </button>
+          </div>
         </div>
         <button className="font-semibold text-lg bg-primary px-10 sm:px-20 lg:px-40 py-2 mx-auto rounded-3xl hover:scale-x-105 active:scale-100 transition-all">
           Calculate

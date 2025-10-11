@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import PackageCard from "./PackageCard";
 
 const packagesType = [
   {
@@ -42,55 +43,14 @@ const SelectPackage = () => {
       </h2>
 
       <div className="h-full w-full sm:px-6 py-4 flex flex-col gap-3">
-        {packagesType.map((pack) => (
-          <div
-            key={pack.type}
-            className="h-[62px] w-full rounded-2xl shadow-lg flex justify-evenly gap-4 pl-4 pr-2"
-          >
-            <div className="w-full flex items-center">
-              <div className="sm:h-10 sm:w-14">
-                {" "}
-                <Image
-                  src={pack.imageSrc}
-                  alt={pack.type}
-                  height={40}
-                  width={40}
-                />
-              </div>
-              <div className="w-44 flex items-center">
-                <p className="text-sm font-semibold">{pack.type}</p>
-                <span className="size-1 bg-black rounded-full ml-2">.</span>
-                <span className="text-[#999999] text-sm ml-2">
-                  {pack.weight} kgs
-                </span>
-              </div>
-              <div className="flex text-sm items-center gap-1 sm:gap-4 ml-4">
-                <span className="size-5 border-[0.5px] border-[#BBBBBB] flex justify-center items-center">
-                  <FiMinus size={14} />
-                </span>
-                1
-                <span className="size-5 border-[0.5px] border-[#BBBBBB] flex justify-center items-center">
-                  <FiPlus size={14} />
-                </span>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center items-end">
-              <p className="text-xs font-bold text-[#448C00]">
-                &#8377;{pack.price}
-              </p>
-              <span className="text-[#434343] text-[10px] font-medium">
-                Qty: 1
-              </span>
-            </div>
-            <p className="size-[12px] mt-2">
-              <Image
-                src="/icons/comment-info.svg"
-                alt="comment info icon"
-                height={16}
-                width={16}
-              />
-            </p>
-          </div>
+        {packagesType.map((pack, i) => (
+          <PackageCard
+            key={pack.type + i}
+            imageSrc={pack.imageSrc}
+            type={pack.type}
+            price={pack.price}
+            weight={pack.weight}
+          />
         ))}
       </div>
     </section>

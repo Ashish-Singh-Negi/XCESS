@@ -6,6 +6,15 @@
   --color-primary: #ffd008;
 }
 
+@layer utilities {
+  .fade-slide {
+    @apply transition-opacity duration-1000 ease-in-out opacity-0;
+  }
+  .fade-slide.active {
+    @apply opacity-100;
+  }
+}
+
 /* Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
