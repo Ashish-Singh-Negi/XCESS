@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`h-dvh w-full bg-white antialiased`}>
+      <body className={`h-dvh w-full bg-white antialiased overflow-x-hidden`}>
         <div className="min-h-screen w-full">
           <Header />
           {children}

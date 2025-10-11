@@ -54,7 +54,11 @@ export default function Home() {
 
       <section
         style={{ backgroundImage: `url('${slides[slideIndex]}')` }}
-        className={`min-h-[740px] sm:min-h-[800px] transition-all lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28`}
+        className="absolute -z-10 top-0 transition-all min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28"
+      />
+
+      <section
+        className={`min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28`}
       >
         <div className="px-6 sm:px-12 lg:px-24 py-20 md:py-20 lg:py-32 sm:text-left flex flex-col items-center sm:block">
           <h1 className="text-[40px] sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%]">
@@ -140,14 +144,14 @@ export default function Home() {
       </div>
 
       {/* Service Categories */}
-      <section className="sm:w-[90%] pt-20 md:pt-40 px-6 sm:px-12 lg:px-24 flex flex-col items-center text-center">
+      <section className="sm:w-[90%] pt-20 md:pt-40 px-6 sm:px-12 flex flex-col items-center text-center">
         <h2 className="text-4xl sm:text-5xl font-semibold">
           Our Service Categories
         </h2>
         <p className="text-lg sm:text-xl text-[#515151] mt-2">
           Our Service Categories
         </p>
-        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-10 w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {["Service-Card1", "Service-Card2", "Service-Card3"].map(
             (card, i) => (
               <Image
@@ -172,15 +176,15 @@ export default function Home() {
 
       {/* Why Choose Us */}
       <p className="h-0.5 w-3/4 sm:w-96 bg-primary mt-20 mx-auto rounded-b-full"></p>
-      <section className="sm:w-[80%] py-14 md:py-28 px-6 sm:px-12 lg:px-40 sm:text-left">
-        <h1 className="text-4xl sm:text-6xl font-bold leading-tight">
+      <section className="sm:w-[80%] py-14 md:py-28 sm:text-left px-8">
+        <h1 className="text-4xl sm:text-6xl font-bold">
           Why <span className="text-primary">should</span> <br />
           <span className="text-primary">you</span> choose US?
         </h1>
-        <p className="text-base sm:text-lg text-[#4E4E4E] font-semibold mt-2">
+        <p className="text-base sm:text-lg text-[#4E4E4E] font-semibold mt-4">
           Because Travel Should Be About Memories, Not Heavy Bags
         </p>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 sm:gap-6">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 sm:gap-6">
           {[
             {
               img: "Feature1",
@@ -201,7 +205,7 @@ export default function Home() {
           ].map((feature, i) => (
             <div
               key={feature.text}
-              className="relative flex flex-col gap-6 items-center"
+              className="flex flex-col gap-6 items-center"
             >
               <Image
                 className="size-36"
@@ -213,7 +217,6 @@ export default function Home() {
               <p className="text-3xl font-semibold text-center">
                 {feature.text}
               </p>
-              <div className="absolute -z-10 right-12 top-0 size-[100px] rounded-full bg-primary"></div>
             </div>
           ))}
         </div>
@@ -229,7 +232,7 @@ export default function Home() {
         <div className="absolute -z-10 -top-40 -right-[460px] size-[800px] bg-[#FFF56926] rounded-full"></div>
         <div className="absolute -z-10 -bottom-[620px] -left-[560px] size-[1060px] bg-[#FEFFEF] rounded-full"></div>
 
-        <main className="flex flex-col lg:flex-row items-center mt-24 mb-20">
+        <main className="w-[80%] flex flex-col lg:flex-row lg:justify-center items-center mt-24 mb-20">
           {/* Step 1 */}
           <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
             <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
@@ -241,7 +244,7 @@ export default function Home() {
               height={122}
               width={122}
             />
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+            <p className="text-xl sm:text-2xl font-medium text-center">
               Book <br /> Online
             </p>
           </div>
@@ -254,7 +257,7 @@ export default function Home() {
               2
             </div>
             <Image src="/Bag.png" alt="Bag Icon" height={122} width={122} />
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+            <p className="text-xl sm:text-2xl font-medium text-center">
               We Collect <br /> Your Bag
             </p>
           </div>
@@ -272,7 +275,7 @@ export default function Home() {
               height={122}
               width={122}
             />
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+            <p className="text-xl sm:text-2xl font-medium text-center">
               Secure Delivery <br /> to Destination
             </p>
           </div>
@@ -285,7 +288,7 @@ export default function Home() {
               4
             </div>
             <Image src="/Van.png" alt="Van Icon" height={122} width={122} />
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-center">
+            <p className="text-xl sm:text-2xl font-medium text-center">
               Track Your <br /> Shipment
             </p>
           </div>
@@ -297,7 +300,7 @@ export default function Home() {
           About US
         </h2>
 
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mt-10 text-center font-medium max-w-[90%] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] px-4">
+        <p className="sm:w-[80%] text-base sm:text-lg md:text-xl lg:text-2xl mt-10 text-center font-medium max-w-[90%] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] px-4">
           Xcess Luggage makes travel simpler, lighter, and stress-free. We
           specialize in door-to-door baggage delivery, helping you skip queues
           and heavy lifting. Our service covers major Indian cities, ensuring
@@ -310,7 +313,7 @@ export default function Home() {
       </section>
 
       <section className="w-full my-20 py-10 flex flex-col items-center">
-        <h2 className="w-full sm:w-[80%] text-4xl mb-20 px-6 sm:px-10 md:px-20 lg:px-40 xl:px-40">
+        <h2 className="w-full sm:w-[80%] text-4xl mb-14 px-6 sm:px-8 leading-0">
           <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
             What <span className="text-primary">People Say ?</span>
           </p>
@@ -354,8 +357,8 @@ export default function Home() {
       </section>
       <p className="h-0.5 w-3/4 sm:w-96 bg-gradient-to-r from-white via-primary to-white mb-10 -mt-10 mx-auto rounded-b-full"></p>
 
-      <section className="w-full max-w-[1200px] mx-auto flex flex-col items-center gap-10 py-20 px-4 sm:px-8">
-        <p className="text-3xl sm:text-4xl md:text-5xl font-medium text-center leading-snug">
+      <section className="w-[80%] mx-auto flex flex-col items-center gap-10 py-20 px-4">
+        <p className="text-3xl sm:text-4xl md:text-5xl font-medium text-center">
           Ready to Travel Light <br /> without worrying about that extra
           luggage?
         </p>
