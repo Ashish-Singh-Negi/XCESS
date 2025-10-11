@@ -58,7 +58,7 @@ export default function Home() {
       </div>
 
       {/* Price Calculator */}
-      <div className="w-[90%] sm:w-full max-w-6xl mx-auto rounded-4xl bg-white py-8 px-10 md:px-16 lg:px-20 -mt-32 sm:-mt-20 flex flex-col gap-8 shadow-xl">
+      <div className="w-[90%] sm:w-[80%] lg:max-w-6xl mx-auto rounded-4xl bg-white py-8 px-10 md:px-16 lg:px-20 -mt-32 sm:-mt-20 flex flex-col gap-8 shadow-xl">
         <h2 className="text-xl sm:text-3xl font-semibold text-left sm:text-left">
           Price Calculator
         </h2>
@@ -81,7 +81,7 @@ export default function Home() {
           ))}
           <button
             onClick={() => setSelectPackage(!selectPackage)}
-            className="relative h-[60px] sm:h-[72px] cursor-pointer w-full sm:w-72 border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-base sm:text-xl flex items-center justify-between"
+            className="relative h-[60px] sm:h-[72px] cursor-pointer w-full border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-base sm:text-xl flex items-center justify-between"
           >
             Choose Luggage
             <Image
@@ -144,7 +144,7 @@ export default function Home() {
         <p className="text-base sm:text-lg text-[#4E4E4E] font-semibold mt-2">
           Because Travel Should Be About Memories, Not Heavy Bags
         </p>
-        <div className="mt-16 flex flex-col lg:flex-row gap-10 items-center justify-center">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             {
               img: "Feature1",
@@ -274,7 +274,7 @@ export default function Home() {
       </section>
 
       <section className="w-full my-20 py-10 flex flex-col items-center">
-        <h2 className="w-[80%] text-4xl mb-20 px-4 sm:px-10 md:px-20 lg:px-40 xl:px-40">
+        <h2 className="w-full sm:w-[80%] text-4xl mb-20 px-6 sm:px-10 md:px-20 lg:px-40 xl:px-40">
           <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
             What <span className="text-primary">People Say ?</span>
           </p>

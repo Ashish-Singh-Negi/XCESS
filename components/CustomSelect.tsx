@@ -16,7 +16,7 @@ const CustomSelect = ({
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="relative h-[60px] sm:h-[72px] cursor-pointer w-full sm:w-72 border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-base sm:text-xl flex items-center justify-between"
+        className="relative h-[60px] sm:h-[72px] cursor-pointer w-full border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-base sm:text-xl flex items-center justify-between"
       >
         {selectedOption}
         {open ? (
@@ -38,7 +38,7 @@ const CustomSelect = ({
         )}
         {open && (
           <div
-            className="absolute z-10 top-full left-0 h-fit cursor-pointer w-full sm:w-72 border-2 bg-white border-[#BFBFBF] outline-none focus-within:border-primary
+            className="absolute z-10 top-full left-0 h-fit cursor-pointer w-full border-2 bg-white border-[#BFBFBF] outline-none focus-within:border-primary
           rounded-lg px-1 py-2 text-base md:text-xl flex flex-col"
           >
             {options.map((option) => (
