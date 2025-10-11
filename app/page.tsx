@@ -54,7 +54,7 @@ export default function Home() {
 
       <section
         style={{ backgroundImage: `url('${slides[slideIndex]}')` }}
-        className={`min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28`}
+        className={`min-h-[740px] sm:min-h-[800px] transition-all lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28`}
       >
         <div className="px-6 sm:px-12 lg:px-24 py-20 md:py-20 lg:py-32 sm:text-left flex flex-col items-center sm:block">
           <h1 className="text-[40px] sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%]">
@@ -140,7 +140,7 @@ export default function Home() {
       </div>
 
       {/* Service Categories */}
-      <section className="sm:w-[80%] pt-20 md:pt-40 px-6 sm:px-12 lg:px-24 flex flex-col items-center text-center">
+      <section className="sm:w-[90%] pt-20 md:pt-40 px-6 sm:px-12 lg:px-24 flex flex-col items-center text-center">
         <h2 className="text-4xl sm:text-5xl font-semibold">
           Our Service Categories
         </h2>
@@ -180,7 +180,7 @@ export default function Home() {
         <p className="text-base sm:text-lg text-[#4E4E4E] font-semibold mt-2">
           Because Travel Should Be About Memories, Not Heavy Bags
         </p>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 sm:gap-6">
           {[
             {
               img: "Feature1",

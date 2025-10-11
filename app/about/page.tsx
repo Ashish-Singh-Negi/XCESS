@@ -3,7 +3,7 @@ import { GoPlus } from "react-icons/go";
 
 const AboutPage = () => {
   return (
-    <div className="w-full min-h-[600px] sm:min-h-[800px] lg:min-h-[1024px] flex justify-center pt-[72px] md:pt-28">
+    <div className="w-full min-h-[600px] sm:min-h-[800px] lg:min-h-[1024px] flex justify-center pt-[72px] md:pt-20">
       <main className="w-[90%] sm:w-[80%] lg:w-[70%] py-10 sm:py-20 flex flex-col gap-16 sm:gap-20">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-medium text-center italic">
           About US
