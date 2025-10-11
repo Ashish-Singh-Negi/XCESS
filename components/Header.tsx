@@ -11,12 +11,12 @@ const Header = () => {
           alt="Logo png"
           height={62}
           width={152}
-          className="h-10 w-20 sm:h-[62px] sm:w-[152px]"
+          className="h-12 w-28 sm:h-[62px] sm:w-[152px]"
         />
 
         <div className="flex flex-col md:flex-row items-center gap-4 md:w-auto">
           <NavBar />
-          <div className="flex gap-4">
+          <div className="hidden sm:flex gap-4">
             <Link
               href={"/book"}
               className="py-2 px-6 bg-yellow-400 text-black rounded-3xl font-medium hover:scale-105 transition-transform cursor-pointer active:scale-100"

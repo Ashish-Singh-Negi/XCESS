@@ -19,37 +19,37 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col items-center">
       {/* Hero Section */}
-      <div className="min-h-[600px] sm:min-h-[800px] lg:min-h-[1024px] w-full bg-[url('/Couple.png')] bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28">
-        <div className="px-6 sm:px-12 lg:px-24 py-10 md:py-20 lg:py-32 sm:text-left">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%]">
+      <div className="min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-[url('/Girl.png')] sm:bg-[url('/Couple.png')] bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28">
+        <div className="px-6 sm:px-12 lg:px-24 py-20 md:py-20 lg:py-32 sm:text-left flex flex-col items-center sm:block">
+          <h1 className="text-[40px] sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%]">
             &quot;We Handle,
             <br /> Your Travel&quot;
           </h1>
-          <p className="text-white mt-6 sm:mt-8 text-sm sm:text-base max-w-[90%]">
+          <p className="text-white mt-4 sm:mt-8 text-xs sm:text-base text-center sm:text-left max-w-[90%]">
             From your doorstep to your destination, we handle <br /> every bag
             with care.
           </p>
 
-          <div className="w-full mt-6 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 justify-center sm:justify-start">
-            <div className="flex items-center gap-4 flex-wrap sm:justify-start">
-              <div className="size-14 bg-[url('/Pic1.jpg')] bg-cover bg-no-repeat rounded-full border-2 border-white"></div>
-              <div className="size-14 bg-[url('/Pic2.jpg')] bg-cover bg-no-repeat -ml-10 rounded-full border-2 border-white"></div>
-              <div className="size-14 bg-[url('/Pic3.jpg')] bg-cover bg-no-repeat -ml-10 rounded-full border-2 border-white"></div>
-              <div className="size-14 bg-primary rounded-full border-2 border-white -ml-10 flex items-center justify-center">
+          <div className="w-full mt-4 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 justify-center sm:justify-start">
+            <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+              <div className="size-6 sm:size-14 bg-[url('/Pic1.jpg')] bg-cover bg-no-repeat rounded-full border-[1px] sm:border-2 border-white"></div>
+              <div className="size-6 sm:size-14 bg-[url('/Pic2.jpg')] bg-cover bg-no-repeat -ml-6 sm:-ml-10 rounded-full border-[1px] sm:border-2 border-white"></div>
+              <div className="size-6 sm:size-14 bg-[url('/Pic3.jpg')] bg-cover bg-no-repeat -ml-6 sm:-ml-10 rounded-full border-[1px] sm:border-2 border-white"></div>
+              <div className="size-6 sm:size-14 bg-primary rounded-full border-[1px] sm:border-2 border-white -ml-6 sm:-ml-10 flex items-center justify-center">
                 <GoPlus className="size-10 text-[#374957]" />
               </div>
-              <div className="flex flex-col justify-center ml-2 sm:text-left">
-                <h3 className="text-base sm:text-lg text-white font-bold">
+              <div className="flex flex-col justify-center -ml-2 sm:ml-2 sm:text-left">
+                <h3 className="text-xs sm:text-lg text-white font-bold">
                   4.9 Ratings+
                 </h3>
-                <p className="text-xs text-[#B6B6B6]">
+                <p className="text-[8px] sm:text-xs text-[#B6B6B6]">
                   Trusted by 10k+ customers
                 </p>
               </div>
             </div>
             <Link
               href={"/book"}
-              className="rounded-3xl bg-primary py-2 px-6 sm:px-10 font-bold text-sm sm:text-base cursor-pointer hover:scale-105 active:scale-100 transition-all flex justify-center"
+              className="rounded-3xl bg-primary py-2 px-8 sm:px-10 font-bold text-lg sm:text-base cursor-pointer hover:scale-105 active:scale-100 transition-all flex justify-center mt-10 mx-auto sm:m-0"
             >
               Book Now!
             </Link>
@@ -58,11 +58,11 @@ export default function Home() {
       </div>
 
       {/* Price Calculator */}
-      <div className="w-full max-w-6xl mx-auto rounded-4xl bg-white py-8 px-6 sm:px-10 md:px-16 lg:px-20 -mt-20 flex flex-col gap-8 shadow-xl">
-        <h2 className="text-3xl font-semibold text-center sm:text-left">
+      <div className="w-[90%] sm:w-full max-w-6xl mx-auto rounded-4xl bg-white py-8 px-10 md:px-16 lg:px-20 -mt-32 sm:-mt-20 flex flex-col gap-8 shadow-xl">
+        <h2 className="text-xl sm:text-3xl font-semibold text-left sm:text-left">
           Price Calculator
         </h2>
-        <div className="flex flex-col lg:flex-row gap-6 w-full">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 w-full">
           {[
             {
               name: "Select Origin",
@@ -81,19 +81,18 @@ export default function Home() {
           ))}
           <button
             onClick={() => setSelectPackage(!selectPackage)}
-            className="relative h-[72px] w-full lg:w-96 border-2 border-[#BFBFBF] cursor-pointer focus-within:border-primary rounded-xl px-6 py-[22px] text-xl flex items-center justify-between"
+            className="relative h-[60px] sm:h-[72px] cursor-pointer w-full sm:w-72 border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-base sm:text-xl flex items-center justify-between"
           >
             Choose Luggage
-            <div className="size-6 mt-2">
-              <Image
-                src="/icons/Angle-down.png"
-                alt="Down Arrow icon"
-                height={24}
-                width={24}
-              />
-            </div>
+            <Image
+              className="size-4 sm:size-6"
+              src="/icons/Angle-down.png"
+              alt="Down Arrow icon"
+              height={24}
+              width={24}
+            />
             {selectPackage && (
-              <div className="absolute z-10 top-[74px] left-0 cursor-default">
+              <div className="absolute w-full sm:w-fit z-10 top-full left-0 cursor-default">
                 <SelectPackage />
               </div>
             )}
@@ -105,7 +104,7 @@ export default function Home() {
       </div>
 
       {/* Service Categories */}
-      <div className="w-[80%] pt-40 px-6 sm:px-12 lg:px-24 flex flex-col items-center text-center">
+      <section className="sm:w-[80%] pt-20 md:pt-40 px-6 sm:px-12 lg:px-24 flex flex-col items-center text-center">
         <h2 className="text-4xl sm:text-5xl font-semibold">
           Our Service Categories
         </h2>
@@ -133,35 +132,59 @@ export default function Home() {
             width={268}
           />
         </div>
-      </div>
+      </section>
 
       {/* Why Choose Us */}
       <p className="h-0.5 w-3/4 sm:w-96 bg-primary mt-20 mx-auto rounded-b-full"></p>
-      <div className="w-[80%] py-28 px-6 sm:px-12 lg:px-40 sm:text-left">
+      <section className="sm:w-[80%] py-14 md:py-28 px-6 sm:px-12 lg:px-40 sm:text-left">
         <h1 className="text-4xl sm:text-6xl font-bold leading-tight">
           Why <span className="text-primary">should</span> <br />
           <span className="text-primary">you</span> choose US?
         </h1>
-        <p className="text-lg text-[#4E4E4E] font-semibold mt-6">
+        <p className="text-base sm:text-lg text-[#4E4E4E] font-semibold mt-2">
           Because Travel Should Be About Memories, Not Heavy Bags
         </p>
         <div className="mt-16 flex flex-col lg:flex-row gap-10 items-center justify-center">
-          {["Feature1", "Feature2", "Feature3", "Feature4"].map(
-            (feature, i) => (
+          {[
+            {
+              img: "Feature1",
+              text: "Fast & Reliable Delivery",
+            },
+            {
+              img: "Feature2",
+              text: "Door-to-Door Service",
+            },
+            {
+              img: "Feature3",
+              text: "Affordable Pricing",
+            },
+            {
+              img: "Feature4",
+              text: "24/7  Customer Support",
+            },
+          ].map((feature, i) => (
+            <div
+              key={feature.text}
+              className="relative flex flex-col gap-6 items-center"
+            >
               <Image
-                key={i}
-                src={`/${feature}.png`}
-                alt={`feature${i + 1}`}
-                height={246}
-                width={264}
+                className="size-36"
+                src={`/${feature.img}.png`}
+                alt={`feature${i + 1} `}
+                height={100}
+                width={100}
               />
-            )
-          )}
+              <p className="text-3xl font-semibold text-center">
+                {feature.text}
+              </p>
+              <div className="absolute -z-10 right-12 top-0 size-[100px] rounded-full bg-primary"></div>
+            </div>
+          ))}
         </div>
-      </div>
+      </section>
       <p className="h-0.5 w-3/4 sm:w-96 bg-primary -mt-4 mx-auto rounded-b-full"></p>
 
-      <div className="relative w-full py-20 flex flex-col items-center overflow-hidden">
+      <section className="relative w-full py-20 flex flex-col items-center overflow-hidden">
         <p className="text-[24px] font-medium text-primary">Just follow some</p>
         <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-center">
           Simple Steps
@@ -231,9 +254,9 @@ export default function Home() {
             </p>
           </div>
         </main>
-      </div>
+      </section>
 
-      <div className="w-full py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
+      <section className="w-full py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center px-4">
           About US
         </h2>
@@ -248,9 +271,9 @@ export default function Home() {
           relocations, Xcess Luggage ensures your journey stays hassle-free from
           start to finish.
         </p>
-      </div>
+      </section>
 
-      <div className="w-full my-20 py-10 flex flex-col items-center">
+      <section className="w-full my-20 py-10 flex flex-col items-center">
         <h2 className="w-[80%] text-4xl mb-20 px-4 sm:px-10 md:px-20 lg:px-40 xl:px-40">
           <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
             What <span className="text-primary">People Say ?</span>
@@ -292,10 +315,10 @@ export default function Home() {
             </div>
           ))}
         </Marquee>
-      </div>
-      <p className="h-0.5 w-3/4 sm:w-96 bg-primary mb-10 -mt-10 mx-auto rounded-b-full"></p>
+      </section>
+      <p className="h-0.5 w-3/4 sm:w-96 bg-gradient-to-r from-white via-primary to-white mb-10 -mt-10 mx-auto rounded-b-full"></p>
 
-      <div className="w-full max-w-[1200px] mx-auto flex flex-col items-center gap-10 py-20 px-4 sm:px-8">
+      <section className="w-full max-w-[1200px] mx-auto flex flex-col items-center gap-10 py-20 px-4 sm:px-8">
         <p className="text-3xl sm:text-4xl md:text-5xl font-medium text-center leading-snug">
           Ready to Travel Light <br /> without worrying about that extra
           luggage?
@@ -306,7 +329,7 @@ export default function Home() {
         >
           Book now !
         </Link>
-      </div>
+      </section>
     </main>
   );
 }

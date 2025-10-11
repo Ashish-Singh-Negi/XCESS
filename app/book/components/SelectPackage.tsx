@@ -37,7 +37,7 @@ const packagesType = [
 const SelectPackage = () => {
   return (
     <section className="w-full max-w-xl rounded-3xl border-2 border-[#DFDFDF] p-4 bg-white">
-      <h2 className="text-lg md:text-xl font-semibold border-b-2 border-[#EDEDED] pb-4 px-2">
+      <h2 className="text-lg md:text-xl text-left font-semibold border-b-2 border-[#EDEDED] pb-4 px-2">
         Select Package Size
       </h2>
 
@@ -45,7 +45,7 @@ const SelectPackage = () => {
         {packagesType.map((pack) => (
           <div
             key={pack.type}
-            className="h-[62px] w-full rounded-2xl shadow-lg flex justify-evenly gap-2 pl-4 pr-2"
+            className="h-[62px] w-full rounded-2xl shadow-lg flex justify-evenly gap-4 pl-4 pr-2"
           >
             <div className="w-full flex items-center">
               <div className="sm:h-10 sm:w-14">
@@ -58,11 +58,13 @@ const SelectPackage = () => {
                 />
               </div>
               <div className="w-44 flex items-center">
-                <p className="font-semibold">{pack.type}</p>
+                <p className="text-sm font-semibold">{pack.type}</p>
                 <span className="size-1 bg-black rounded-full ml-2">.</span>
-                <span className="text-[#999999] ml-2">{pack.weight} kgs</span>
+                <span className="text-[#999999] text-sm ml-2">
+                  {pack.weight} kgs
+                </span>
               </div>
-              <div className="flex items-center gap-4 ml-4">
+              <div className="flex text-sm items-center gap-1 sm:gap-4 ml-4">
                 <span className="size-5 border-[0.5px] border-[#BBBBBB] flex justify-center items-center">
                   <FiMinus size={14} />
                 </span>

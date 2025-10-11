@@ -16,12 +16,12 @@ const CustomSelect = ({
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="relative h-[72px] cursor-pointer w-full sm:w-72 border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-xl flex items-center justify-between"
+        className="relative h-[60px] sm:h-[72px] cursor-pointer w-full sm:w-72 border-2 border-[#BFBFBF] outline-none focus-within:border-primary  rounded-xl px-6 py-[22px] text-base sm:text-xl flex items-center justify-between"
       >
         {selectedOption}
         {open ? (
           <Image
-            className="rotate-180 transition-transform"
+            className="rotate-180 transition-transform size-4 sm:size-6"
             src="/icons/Angle-down.png"
             alt="Down Arrow icon"
             height={24}
@@ -29,7 +29,7 @@ const CustomSelect = ({
           />
         ) : (
           <Image
-            className="transition-transform"
+            className="transition-transform size-4 sm:size-6"
             src="/icons/Angle-down.png"
             alt="Down Arrow icon"
             height={24}
@@ -38,8 +38,8 @@ const CustomSelect = ({
         )}
         {open && (
           <div
-            className="absolute z-10 top-[74px] left-0 h-fit cursor-pointer w-full sm:w-72 border-2 bg-white border-[#BFBFBF] outline-none focus-within:border-primary
-          rounded-lg px-1 py-2 text-xl flex flex-col"
+            className="absolute z-10 top-full left-0 h-fit cursor-pointer w-full sm:w-72 border-2 bg-white border-[#BFBFBF] outline-none focus-within:border-primary
+          rounded-lg px-1 py-2 text-base md:text-xl flex flex-col"
           >
             {options.map((option) => (
               <p
