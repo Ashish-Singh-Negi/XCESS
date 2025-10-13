@@ -11,31 +11,71 @@ import { IoIosArrowForward } from "react-icons/io";
 import CustomSelect from "@/components/CustomSelect";
 import Link from "next/link";
 import SelectPackage from "./book/components/SelectPackage";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const defaultSlides = ["Cover1.png", "Cover2.jpg", "SmallCover3.png"];
 
 const mobileSlides = ["SmallCover1.png", "SmallCover2.png", "SmallCover3.png"];
 
+const serviceCarouselSlides = [
+  "Service-Card1",
+  "Service-Card2",
+  "Service-Card3",
+  "Service-Card4",
+];
+
 export default function Home() {
   const [selectPackage, setSelectPackage] = useState(false);
 
   const [slides, setSlides] = useState(defaultSlides);
-  const [slideIndex, setSlideIndex] = useState(0);
+  const mainBannerCarouselRef = useRef<HTMLDivElement>(null);
+  const mainBannerCarouselIndexRef = useRef(0);
+
+  const serviceCarouselRef = useRef<HTMLDivElement>(null);
+  const serviceCarouselIndexRef = useRef(0);
 
   useEffect(() => {
     const id = setInterval(() => {
       console.log(slides.length);
-      setSlideIndex((prev) => (prev + 1) % slides.length);
-    }, 4000);
+
+      mainBannerCarouselIndexRef.current =
+        (mainBannerCarouselIndexRef.current + 1) % slides.length;
+
+      const container = mainBannerCarouselRef.current;
+      if (container) {
+        const containerWidth = container.offsetWidth;
+        container.scrollTo({
+          left: containerWidth * mainBannerCarouselIndexRef.current,
+          behavior: "smooth",
+        });
+      }
+    }, 5000);
 
     return () => clearInterval(id);
   }, [slides]);
 
   useEffect(() => {
+    const id = setInterval(() => {
+      console.log(slides.length);
+
+      serviceCarouselIndexRef.current =
+        (serviceCarouselIndexRef.current + 1) % serviceCarouselSlides.length;
+
+      const container = serviceCarouselRef.current;
+      if (container) {
+        container.scrollTo({
+          left: 296 * serviceCarouselIndexRef.current,
+          behavior: "smooth",
+        });
+      }
+    }, 5000);
+
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
     const handleResize = () => {
       const viewport = window.innerWidth;
-      console.log("🚀 ~ Home ~ viewport:", viewport);
 
       if (viewport < 640) setSlides(mobileSlides);
       else setSlides(defaultSlides);
@@ -53,12 +93,20 @@ export default function Home() {
       {/* Hero Section */}
 
       <section
-        style={{ backgroundImage: `url('${slides[slideIndex]}')` }}
-        className="absolute -z-10 top-0 transition-all min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28"
-      />
+        ref={mainBannerCarouselRef}
+        className="min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full flex overflow-x-hidden"
+      >
+        {slides.map((slide) => (
+          <div
+            key={slide}
+            style={{ backgroundImage: `url('${slide}')` }}
+            className="transition-all shrink-0 w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28"
+          />
+        ))}
+      </section>
 
       <section
-        className={`min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28`}
+        className={`absolute min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28`}
       >
         <div className="px-6 sm:px-12 lg:px-24 py-20 md:py-20 lg:py-32 sm:text-left flex flex-col items-center sm:block">
           <h1 className="text-[40px] sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%]">
@@ -144,39 +192,50 @@ export default function Home() {
       </div>
 
       {/* Service Categories */}
-      <section className="sm:w-[90%] pt-20 md:pt-40 px-6 sm:px-12 flex flex-col items-center text-center">
-        <h2 className="text-4xl sm:text-5xl font-semibold">
+      <section className="sm:w-[80%] pt-20 md:pt-40 px-0 sm:px-12 flex flex-col items-center text-center">
+        <h2 className="text-3xl sm:text-5xl font-semibold">
           Our Service Categories
         </h2>
-        <p className="text-lg sm:text-xl text-[#515151] mt-2">
+        <p className="text-base sm:text-xl text-[#515151] mt-2">
           Our Service Categories
         </p>
-        <div className="mt-10 w-[80%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {["Service-Card1", "Service-Card2", "Service-Card3"].map(
-            (card, i) => (
+        <div
+          ref={serviceCarouselRef}
+          className="sm:hidden flex px-18 w-full mt-10 overflow-x-hidden"
+        >
+          {serviceCarouselSlides.map((card, i) => (
+            <div key={i} className="shrink-0 px-5 flex justify-center">
               <Image
-                key={i}
                 src={`/${card}.png`}
                 alt={`Service card ${i + 1}`}
                 height={364}
                 width={268}
-              />
-            )
-          )}
-
-          <Image
-            className="-mt-4"
-            src={`/Service-Card4.png`}
-            alt={`Service card 4 png`}
-            height={364}
-            width={268}
-          />
+              />{" "}
+            </div>
+          ))}
+        </div>
+        <div className="hidden sm:grid mt-10 sm:w-[90%] grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            "Service-Card1",
+            "Service-Card2",
+            "Service-Card3",
+            "Service-Card4",
+          ].map((card, i) => (
+            <div key={i} className="flex justify-center">
+              <Image
+                src={`/${card}.png`}
+                alt={`Service card ${i + 1}`}
+                height={364}
+                width={268}
+              />{" "}
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <p className="h-0.5 w-3/4 sm:w-96 bg-primary mt-20 mx-auto rounded-b-full"></p>
-      <section className="sm:w-[80%] py-14 md:py-28 sm:text-left px-8">
+      <p className="hidden sm:block h-0.5 w-3/4 sm:w-96 bg-primary mt-20 mx-auto rounded-b-full"></p>
+      <section className="sm:w-[80%] py-18 md:py-28 sm:text-left px-8">
         <h1 className="text-4xl sm:text-6xl font-bold">
           Why <span className="text-primary">should</span> <br />
           <span className="text-primary">you</span> choose US?
@@ -184,7 +243,7 @@ export default function Home() {
         <p className="text-base sm:text-lg text-[#4E4E4E] font-semibold mt-4">
           Because Travel Should Be About Memories, Not Heavy Bags
         </p>
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-20 sm:gap-6">
+        <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 gap-y-10 lg:gap-6">
           {[
             {
               img: "Feature1",
@@ -203,104 +262,88 @@ export default function Home() {
               text: "24/7  Customer Support",
             },
           ].map((feature, i) => (
-            <div
-              key={feature.text}
-              className="flex flex-col gap-6 items-center"
-            >
-              <Image
-                className="size-36"
-                src={`/${feature.img}.png`}
-                alt={`feature${i + 1} `}
-                height={100}
-                width={100}
-              />
-              <p className="text-3xl font-semibold text-center">
-                {feature.text}
-              </p>
+            <div key={feature.text} className="flex justify-center">
+              <div className="flex w-[148px] flex-col gap-6 items-center">
+                <Image
+                  className="size-20 sm:size-36"
+                  src={`/${feature.img}.png`}
+                  alt={`feature${i + 1} `}
+                  height={100}
+                  width={100}
+                />
+                <p className="text-base md:text-3xl font-semibold text-center leading-tight">
+                  {feature.text}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </section>
-      <p className="h-0.5 w-3/4 sm:w-96 bg-primary -mt-4 mx-auto rounded-b-full"></p>
 
-      <section className="relative w-full py-20 flex flex-col items-center overflow-hidden">
-        <p className="text-[24px] font-medium text-primary">Just follow some</p>
-        <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-center">
+      <p className="bg-gradient-to-r from-white via-primary to-white sm:bg-primary h-0.5 w-3/4 sm:w-96 -mt-4 mx-auto rounded-b-full"></p>
+
+      <section className="relative w-full py-4 sm:py-20 flex flex-col items-center overflow-hidden">
+        <p className="text-sm sm:text-[24px] font-medium text-primary">
+          Just follow some
+        </p>
+        <span className="text-[40px] sm:text-6xl md:text-7xl lg:text-8xl font-medium text-center">
           Simple Steps
         </span>
 
-        <div className="absolute -z-10 -top-40 -right-[460px] size-[800px] bg-[#FFF56926] rounded-full"></div>
-        <div className="absolute -z-10 -bottom-[620px] -left-[560px] size-[1060px] bg-[#FEFFEF] rounded-full"></div>
+        <div className="absolute -z-10 sm:-top-40 -right-[460px] size-[600px] md:size-[800px] bg-[#FFF56926] rounded-full"></div>
+        <div className="absolute -z-10 bottom-0 sm:-bottom-[620px] -left-[750px] sm:-left-[560px] size-[912px] md:size-[1060px] bg-[#FEFFEF] rounded-full"></div>
 
-        <main className="w-[80%] flex flex-col lg:flex-row lg:justify-center items-center mt-24 mb-20">
-          {/* Step 1 */}
-          <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
-            <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
-              1
+        <main className="w-[80%] flex flex-col lg:flex-row lg:justify-center items-center my-4 sm:mt-24 sm:mb-20">
+          {[
+            {
+              img: "Book-Online",
+              text: "Book Online",
+            },
+            {
+              img: "Bag",
+              text: "We Collect Your Bag",
+            },
+            {
+              img: "Security",
+              text: "Secure Delivery to Destination",
+            },
+            {
+              img: "van",
+              text: "Track Your Shipment",
+            },
+          ].map((step, i) => (
+            <div
+              className="flex flex-col lg:flex-row items-center"
+              key={step.text + i}
+            >
+              <div className="flex flex-col items-center gap-2 justify-center h-80 w-64">
+                <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
+                  {i + 1}
+                </div>
+                <Image
+                  src={`/${step.img}.png`}
+                  alt="Book Online Icon"
+                  height={122}
+                  width={122}
+                />
+                <p className="text-xl sm:text-2xl font-medium text-center">
+                  {step.text}
+                </p>
+              </div>
+              {i < 3 && (
+                <IoIosArrowForward className="size-10 text-primary rotate-90 lg:rotate-0" />
+              )}
             </div>
-            <Image
-              src="/Book-Online.png"
-              alt="Book Online Icon"
-              height={122}
-              width={122}
-            />
-            <p className="text-xl sm:text-2xl font-medium text-center">
-              Book <br /> Online
-            </p>
-          </div>
-
-          <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
-
-          {/* Step 2 */}
-          <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
-            <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
-              2
-            </div>
-            <Image src="/Bag.png" alt="Bag Icon" height={122} width={122} />
-            <p className="text-xl sm:text-2xl font-medium text-center">
-              We Collect <br /> Your Bag
-            </p>
-          </div>
-
-          <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
-
-          {/* Step 3 */}
-          <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
-            <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
-              3
-            </div>
-            <Image
-              src="/Security.png"
-              alt="Security Icon"
-              height={122}
-              width={122}
-            />
-            <p className="text-xl sm:text-2xl font-medium text-center">
-              Secure Delivery <br /> to Destination
-            </p>
-          </div>
-
-          <IoIosArrowForward className="size-10 text-primary hidden lg:block" />
-
-          {/* Step 4 */}
-          <div className="flex flex-col items-center gap-2 lg:justify-between justify-center h-80 w-64">
-            <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
-              4
-            </div>
-            <Image src="/Van.png" alt="Van Icon" height={122} width={122} />
-            <p className="text-xl sm:text-2xl font-medium text-center">
-              Track Your <br /> Shipment
-            </p>
-          </div>
+          ))}
         </main>
       </section>
 
-      <section className="w-full py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center px-4">
+      <section className="w-full py-0 sm:py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
+        <h2 className="text-[40px] sm:text-4xl md:text-5xl font-semibold text-center px-4">
           About US
         </h2>
 
-        <p className="sm:w-[80%] text-base sm:text-lg md:text-xl lg:text-2xl mt-10 text-center font-medium max-w-[90%] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] px-4">
+        <p className="hidden md:w-[80%] text-base sm:text-lg md:text-xl lg:text-2xl mt-10 text-center font-medium max-w-[90%] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] px-4">
           Xcess Luggage makes travel simpler, lighter, and stress-free. We
           specialize in door-to-door baggage delivery, helping you skip queues
           and heavy lifting. Our service covers major Indian cities, ensuring
@@ -310,9 +353,19 @@ export default function Home() {
           relocations, Xcess Luggage ensures your journey stays hassle-free from
           start to finish.
         </p>
+
+        <p className="block w-80 md:hidden text-base sm:text-lg md:text-xl lg:text-2xl mt-4 text-center font-medium max-w-[90%] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] px-4">
+          Xcess Luggage makes travel simpler, lighter, and stress-free. We
+          specialize in door-to-door baggage delivery, helping you skip queues
+          and heavy lifting. Our service covers major Indian cities, ensuring
+          your bags arrive safely and on time.
+          <button className="block mx-auto mt-4 text-base font-semibold bg-[#FFF3A2] px-8 py-2 rounded-3xl">
+            Learn more...
+          </button>
+        </p>
       </section>
 
-      <section className="w-full my-20 py-10 flex flex-col items-center">
+      <section className="w-full my-10 sm:my-20 py-10 flex flex-col items-center">
         <h2 className="w-full sm:w-[80%] text-4xl mb-14 px-6 sm:px-8 leading-0">
           <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
             What <span className="text-primary">People Say ?</span>
@@ -357,14 +410,14 @@ export default function Home() {
       </section>
       <p className="h-0.5 w-3/4 sm:w-96 bg-gradient-to-r from-white via-primary to-white mb-10 -mt-10 mx-auto rounded-b-full"></p>
 
-      <section className="w-[80%] mx-auto flex flex-col items-center gap-10 py-20 px-4">
-        <p className="text-3xl sm:text-4xl md:text-5xl font-medium text-center">
+      <section className="w-[80%] mx-auto flex flex-col items-center gap-4 sm:gap-10 pb-10 sm:py-20 px-4">
+        <p className="text-lg sm:text-3xl md:text-5xl font-medium text-center">
           Ready to Travel Light <br /> without worrying about that extra
           luggage?
         </p>
         <Link
           href={"/book"}
-          className="border-2 border-[#FFF235] text-xl sm:text-2xl md:text-4xl font-semibold py-4 px-10 sm:px-20 md:px-60 rounded-3xl bg-[#FFD008] cursor-pointer active:scale-x-100 hover:scale-x-105 transition-transform"
+          className="border-2 border-[#FFF235] text-sm sm:text-2xl md:text-4xl font-semibold py-1 sm:py-4 px-10 sm:px-20 md:px-60 rounded-3xl bg-[#FFD008] cursor-pointer active:scale-x-100 hover:scale-x-105 transition-transform"
         >
           Book now !
         </Link>

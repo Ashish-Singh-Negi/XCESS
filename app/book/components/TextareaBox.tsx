@@ -2,14 +2,12 @@
 
 const TextareaBox = ({
   label,
-  type = "text",
   isRequired,
   placeholder,
 }: {
   label: string;
   isRequired: boolean;
   placeholder: string;
-  type?: string;
 }) => {
   return (
     <div className="w-full">

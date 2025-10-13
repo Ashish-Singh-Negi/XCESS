@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { FiMinus, FiPlus } from "react-icons/fi";
 import PackageCard from "./PackageCard";
 
 const packagesType = [

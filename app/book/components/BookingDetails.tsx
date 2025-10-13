@@ -7,10 +7,10 @@ import { useState } from "react";
 import Payment from "./Payment";
 
 const BookingDetails = () => {
-  const [isTermsAndConditionsAgreed, setIsTermsAndConditionsAgreed] =
-    useState(false);
-  const [isPrivacyPolicyAgreed, setIsPrivacyPolicyAgreed] = useState(false);
-  const [isSecuredPackage, setIsSecuredPackage] = useState(false);
+  // const [isTermsAndConditionsAgreed, setIsTermsAndConditionsAgreed] =
+  //   useState(false);
+  // const [isPrivacyPolicyAgreed, setIsPrivacyPolicyAgreed] = useState(false);
+  // const [isSecuredPackage, setIsSecuredPackage] = useState(false);
 
   const [payment, setPayment] = useState(false);
 
