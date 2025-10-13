@@ -33,6 +33,7 @@ export default function Home() {
 
   const serviceCarouselRef = useRef<HTMLDivElement>(null);
   const serviceCarouselIndexRef = useRef(0);
+  const [serviceCarouselIndex, setServiceCarouselIndex] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -61,10 +62,12 @@ export default function Home() {
       serviceCarouselIndexRef.current =
         (serviceCarouselIndexRef.current + 1) % serviceCarouselSlides.length;
 
+      setServiceCarouselIndex(serviceCarouselIndexRef.current);
+
       const container = serviceCarouselRef.current;
       if (container) {
         container.scrollTo({
-          left: 296 * serviceCarouselIndexRef.current,
+          left: 300 * serviceCarouselIndexRef.current,
           behavior: "smooth",
         });
       }
@@ -180,7 +183,7 @@ export default function Home() {
               width={24}
             />
             {selectPackage && (
-              <div className="absolute w-full sm:w-fit z-10 top-full left-0 cursor-default">
+              <div className="hidden md:block absolute w-full sm:w-fit z-10 top-full left-0 cursor-default">
                 <SelectPackage />
               </div>
             )}
@@ -199,20 +202,37 @@ export default function Home() {
         <p className="text-base sm:text-xl text-[#515151] mt-2">
           Our Service Categories
         </p>
-        <div
-          ref={serviceCarouselRef}
-          className="sm:hidden flex px-18 w-full mt-10 overflow-x-hidden"
-        >
-          {serviceCarouselSlides.map((card, i) => (
-            <div key={i} className="shrink-0 px-5 flex justify-center">
-              <Image
-                src={`/${card}.png`}
-                alt={`Service card ${i + 1}`}
-                height={364}
-                width={268}
-              />{" "}
-            </div>
-          ))}
+
+        <div className="relative sm:hidden h-full w-full">
+          <div
+            ref={serviceCarouselRef}
+            className=" flex gap-10 px-18 w-full mt-10 overflow-x-hidden"
+          >
+            {serviceCarouselSlides.map((card, i) => (
+              <div key={i} className="shrink-0 flex justify-center">
+                <Image
+                  src={`/${card}.png`}
+                  alt={`Service card ${i + 1}`}
+                  height={364}
+                  width={268}
+                />{" "}
+              </div>
+            ))}
+          </div>
+          <div className="absolute left-0 top-0 h-full w-4 bg-gradient-to-r from-white to-white/90 blur-lg"></div>
+          <div className="absolute right-0 top-0 h-full w-4 bg-gradient-to-l from-white to-white/90 blur-lg"></div>
+          <div className="h-2 w-full mt-6 flex justify-center items-center gap-2">
+            {serviceCarouselSlides.map((_, i) => (
+              <button
+                key={"Service Card nav btn" + i}
+                className={`${
+                  i === serviceCarouselIndex
+                    ? "size-2.5 bg-primary"
+                    : "size-2 bg-[#FFF1CB]"
+                } rounded-full transition-transform`}
+              ></button>
+            ))}
+          </div>
         </div>
         <div className="hidden sm:grid mt-10 sm:w-[90%] grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
@@ -263,7 +283,7 @@ export default function Home() {
             },
           ].map((feature, i) => (
             <div key={feature.text} className="flex justify-center">
-              <div className="flex w-[148px] flex-col gap-6 items-center">
+              <div className="flex flex-col gap-6 items-center">
                 <Image
                   className="size-20 sm:size-36"
                   src={`/${feature.img}.png`}
@@ -271,7 +291,7 @@ export default function Home() {
                   height={100}
                   width={100}
                 />
-                <p className="text-base md:text-3xl font-semibold text-center leading-tight">
+                <p className="w-52 text-base md:text-3xl font-semibold text-center leading-tight">
                   {feature.text}
                 </p>
               </div>
@@ -316,7 +336,7 @@ export default function Home() {
               className="flex flex-col lg:flex-row items-center"
               key={step.text + i}
             >
-              <div className="flex flex-col items-center gap-2 justify-center h-80 w-64">
+              <div className="flex flex-col items-center gap-2 justify-center lg:justify-between h-80 w-64">
                 <div className="size-[52px] bg-primary rounded-full text-3xl flex justify-center items-center">
                   {i + 1}
                 </div>
@@ -326,7 +346,7 @@ export default function Home() {
                   height={122}
                   width={122}
                 />
-                <p className="text-xl sm:text-2xl font-medium text-center">
+                <p className="lg:h-20 lg:w-48 text-xl sm:text-2xl font-medium text-center">
                   {step.text}
                 </p>
               </div>
