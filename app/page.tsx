@@ -27,6 +27,8 @@ const serviceCarouselSlides = [
 export default function Home() {
   const [selectPackage, setSelectPackage] = useState(false);
 
+  const [delay, setDelay] = useState(100);
+
   const [slides, setSlides] = useState(defaultSlides);
   const mainBannerCarouselRef = useRef<HTMLDivElement>(null);
   const mainBannerCarouselIndexRef = useRef(0);
@@ -61,6 +63,7 @@ export default function Home() {
         (serviceCarouselIndexRef.current + 1) % serviceCarouselSlides.length;
 
       setServiceCarouselIndex(serviceCarouselIndexRef.current);
+      delay === 100 && setDelay(3000);
 
       const container = serviceCarouselRef.current;
       if (container) {
@@ -77,10 +80,10 @@ export default function Home() {
           });
         }
       }
-    }, 5000);
+    }, delay);
 
     return () => clearInterval(id);
-  }, []);
+  }, [delay]);
 
   useEffect(() => {
     const handleResize = () => {
