@@ -388,9 +388,12 @@ export default function Home() {
           specialize in door-to-door baggage delivery, helping you skip queues
           and heavy lifting. Our service covers major Indian cities, ensuring
           your bags arrive safely and on time.
-          <button className="block mx-auto mt-4 text-base font-semibold bg-[#FFF3A2] px-8 py-2 rounded-3xl">
+          <Link
+            href={"/about"}
+            className="w-fit block mx-auto mt-4 text-base font-semibold active:scale-95 transition-transform bg-[#FFF3A2] px-8 py-2 rounded-3xl"
+          >
             Learn more...
-          </button>
+          </Link>
         </p>
 
         <section className="w-full my-10 sm:my-20 py-10 flex flex-col items-center">
