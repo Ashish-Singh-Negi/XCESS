@@ -367,7 +367,7 @@ export default function Home() {
         </main>
       </section>
 
-      <section className="w-full mb-6 py-0 sm:py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-center sm:bg-contain">
+      <section className="w-full mb-6 py-0 sm:py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-center lg:bg-cover">
         <h2 className="text-[40px] sm:text-4xl md:text-5xl font-semibold text-center px-4">
           About US
         </h2>

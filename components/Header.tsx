@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import NavBar from "./NavBar";
 import Link from "next/link";
+import { useState } from "react";
 
 const Header = () => {
   return (
@@ -13,7 +16,7 @@ const Header = () => {
           <Image src="/Logo.png" alt="Logo png" height={62} width={152} />
         </Link>
 
-        <div className="flex flex-col md:flex-row items-center gap-4 md:w-auto">
+        <div className="flex items-center gap-4 md:w-auto">
           <NavBar />
           <div className="hidden sm:flex gap-4">
             <Link
