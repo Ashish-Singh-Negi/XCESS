@@ -308,7 +308,7 @@ export default function Home() {
               text: "Secure Delivery to Destination",
             },
             {
-              img: "van",
+              img: "Van",
               text: "Track Your Shipment",
             },
           ].map((step, i) => (
@@ -338,12 +338,12 @@ export default function Home() {
         </main>
       </section>
 
-      <section className="w-full py-0 sm:py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-contain">
+      <section className="w-full mb-6 py-0 sm:py-20 flex flex-col items-center bg-[url('/Bg-About-us.png')] bg-no-repeat bg-center sm:bg-contain">
         <h2 className="text-[40px] sm:text-4xl md:text-5xl font-semibold text-center px-4">
           About US
         </h2>
 
-        <p className="hidden md:w-[80%] text-base sm:text-lg md:text-xl lg:text-2xl mt-10 text-center font-medium max-w-[90%] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] px-4">
+        <p className="hidden md:block md:w-[80%] text-base sm:text-lg md:text-xl lg:text-2xl mt-10 text-center font-medium max-w-[90%] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1280px] px-4">
           Xcess Luggage makes travel simpler, lighter, and stress-free. We
           specialize in door-to-door baggage delivery, helping you skip queues
           and heavy lifting. Our service covers major Indian cities, ensuring
@@ -363,61 +363,61 @@ export default function Home() {
             Learn more...
           </button>
         </p>
-      </section>
 
-      <section className="w-full my-10 sm:my-20 py-10 flex flex-col items-center">
-        <h2 className="w-full sm:w-[80%] text-4xl mb-14 px-6 sm:px-8 leading-0">
-          <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
-            What <span className="text-primary">People Say ?</span>
-          </p>
-          <span className="text-base sm:text-lg md:text-xl text-gray-600">
-            who trusted us with their luggage
-          </span>
-        </h2>
+        <section className="w-full my-10 sm:my-20 py-10 flex flex-col items-center">
+          <h2 className="w-full sm:w-[80%] text-4xl mb-14 px-6 sm:px-8 leading-0">
+            <p className="text-3xl sm:text-4xl md:text-5xl font-semibold">
+              What <span className="text-primary">People Say ?</span>
+            </p>
+            <span className="text-base sm:text-lg md:text-xl text-gray-600">
+              who trusted us with their luggage
+            </span>
+          </h2>
 
-        <Marquee className="h-36 w-full flex gap-4 overflow-y-visible">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => (
-            <div
-              key={num}
-              className="relative shrink-0 overflow-y-visible h-auto w-64 sm:w-72 px-2 flex flex-col justify-around bg-white rounded-lg"
-            >
-              <BiSolidQuoteAltLeft
-                size={16}
-                className="absolute -top-1 -left-1 text-primary"
-              />
-              <p className="py-1 text-[#697981] text-sm sm:text-base">
-                I&apos;ve been a member for 2 years and can&apos;t be more
-                satisfied. I&apos;ve learned so much!
-              </p>
-              <div className="h-11 flex items-center">
-                <div className="size-11 rounded-full bg-red-200 bg-[url('/Pic3.jpg')] bg-no-repeat bg-cover"></div>
-                <div className="ml-2">
-                  <p className="font-medium text-sm sm:text-base">Apple G</p>
-                  <div className="h-5 -mt-0.5 flex">
-                    {[...Array(5)].map((_, i) => (
-                      <TiStarFullOutline
-                        key={i}
-                        className="text-primary"
-                        size={20}
-                      />
-                    ))}
+          <Marquee className="h-36 w-full flex gap-4 overflow-y-visible">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((num) => (
+              <div
+                key={num}
+                className="relative shrink-0 overflow-y-visible h-auto w-64 sm:w-72 px-2 flex flex-col justify-around rounded-lg"
+              >
+                <BiSolidQuoteAltLeft
+                  size={16}
+                  className="absolute -top-1 -left-1 text-primary"
+                />
+                <p className="py-1 text-[#697981] text-sm sm:text-base">
+                  I&apos;ve been a member for 2 years and can&apos;t be more
+                  satisfied. I&apos;ve learned so much!
+                </p>
+                <div className="h-11 flex items-center">
+                  <div className="size-11 rounded-full bg-red-200 bg-[url('/Pic3.jpg')] bg-no-repeat bg-cover"></div>
+                  <div className="ml-2">
+                    <p className="font-medium text-sm sm:text-base">Apple G</p>
+                    <div className="h-5 -mt-0.5 flex">
+                      {[...Array(5)].map((_, i) => (
+                        <TiStarFullOutline
+                          key={i}
+                          className="text-primary"
+                          size={20}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Marquee>
+            ))}
+          </Marquee>
+        </section>
       </section>
       <p className="h-0.5 w-3/4 sm:w-96 bg-gradient-to-r from-white via-primary to-white mb-10 -mt-10 mx-auto rounded-b-full"></p>
 
       <section className="w-[80%] mx-auto flex flex-col items-center gap-4 sm:gap-10 pb-10 sm:py-20 px-4">
-        <p className="text-lg sm:text-3xl md:text-5xl font-medium text-center">
+        <p className="text-lg sm:text-2xl md:text-3xl font-medium text-center">
           Ready to Travel Light <br /> without worrying about that extra
           luggage?
         </p>
         <Link
           href={"/book"}
-          className="border-2 border-[#FFF235] text-sm sm:text-2xl md:text-4xl font-semibold py-1 sm:py-4 px-10 sm:px-20 md:px-60 rounded-3xl bg-[#FFD008] cursor-pointer active:scale-x-100 hover:scale-x-105 transition-transform"
+          className="border-2 border-[#FFF235] text-sm sm:text-2xl md:text-3xl font-semibold py-1 sm:py-3 md:py-4 px-10 sm:px-20 md:px-20 lg:px-40 rounded-3xl bg-[#FFD008] cursor-pointer active:scale-x-100 hover:scale-x-105 transition-transform"
         >
           Book now !
         </Link>
