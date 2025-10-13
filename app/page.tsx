@@ -57,8 +57,6 @@ export default function Home() {
 
   useEffect(() => {
     const id = setInterval(() => {
-      console.log(slides.length);
-
       serviceCarouselIndexRef.current =
         (serviceCarouselIndexRef.current + 1) % serviceCarouselSlides.length;
 
@@ -66,10 +64,18 @@ export default function Home() {
 
       const container = serviceCarouselRef.current;
       if (container) {
-        container.scrollTo({
-          left: 300 * serviceCarouselIndexRef.current,
-          behavior: "smooth",
-        });
+        const child = container.children[
+          serviceCarouselIndexRef.current
+        ] as HTMLElement;
+        if (child) {
+          container.scrollTo({
+            left:
+              child.offsetLeft -
+              container.clientWidth / 2 +
+              child.clientWidth / 2,
+            behavior: "smooth",
+          });
+        }
       }
     }, 5000);
 
