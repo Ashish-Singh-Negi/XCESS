@@ -300,7 +300,7 @@ export default function Home() {
                   height={100}
                   width={100}
                 />
-                <p className="w-52 text-base md:text-3xl font-semibold text-center leading-tight">
+                <p className="sm:w-52 text-base md:text-3xl font-semibold text-center leading-tight">
                   {feature.text}
                 </p>
               </div>
