@@ -44,9 +44,9 @@ const AboutPage = () => {
             </p>
             <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
               <div className="size-14 bg-[url('/Pic1.jpg')] bg-cover bg-no-repeat rounded-full border-2 border-white"></div>
-              <div className="size-14 bg-[url('/Pic2.jpg')] bg-cover bg-no-repeat -ml-4 sm:-ml-10 rounded-full border-2 border-white"></div>
-              <div className="size-14 bg-[url('/Pic3.jpg')] bg-cover bg-no-repeat -ml-4 sm:-ml-10 rounded-full border-2 border-white"></div>
-              <div className="size-14 bg-primary rounded-full border-2 border-white -ml-4 sm:-ml-10 flex items-center justify-center">
+              <div className="size-14 bg-[url('/Pic2.jpg')] bg-cover bg-no-repeat -ml-10 rounded-full border-2 border-white"></div>
+              <div className="size-14 bg-[url('/Pic3.jpg')] bg-cover bg-no-repeat -ml-10 rounded-full border-2 border-white"></div>
+              <div className="size-14 bg-primary rounded-full border-2 border-white -ml-10 flex items-center justify-center">
                 <GoPlus className="size-10 text-[#374957]" />
               </div>
               <div className="flex flex-col justify-center ml-2 text-center sm:text-left">
