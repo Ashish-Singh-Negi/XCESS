@@ -1,12 +1,12 @@
 const PriceSummary = () => {
   return (
-    <section className="h-[370px] w-[348px] border-2 border-[#DFDFDF] rounded-xl px-8 py-6 flex flex-col justify-between">
+    <section className="w-full sm:h-[370px] sm:w-[348px] border-2 border-[#DFDFDF] rounded-xl px-8 py-6 flex flex-col gap-10 sm:gap-0 justify-between">
       <div>
         <h2 className="text-xl font-semibold border-b-2 border-[#FFF0AF] pb-2">
           Price Summary
         </h2>
 
-        <div className="py-4 flex flex-col gap-4">
+        <div className="py-4 flex flex-col gap-2 md:gap-4">
           <p className="text-sm font-normal flex justify-between">
             Freight Charge <span>&#8377;381.35</span>
           </p>
@@ -22,7 +22,7 @@ const PriceSummary = () => {
         </div>
       </div>
 
-      <p className="border-t-2 pt-2 border-[#EAEAEA] text-2xl font-semibold text-end">
+      <p className="border-t-2 pt-2 border-[#EAEAEA] text-xl md:text-2xl font-semibold text-end">
         &#8377; 1453.00
       </p>
     </section>

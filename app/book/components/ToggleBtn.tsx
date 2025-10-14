@@ -21,7 +21,7 @@ const ToggleBtn = ({ text }: { text: string }) => {
           }`}
         ></div>
       </button>
-      <span>{text}</span>
+      <span className="text-sm sm:text-base">{text}</span>
     </div>
   );
 };

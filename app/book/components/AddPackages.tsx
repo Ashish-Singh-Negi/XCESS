@@ -18,7 +18,7 @@ const AddPackages = () => {
             onClick={() => setRoute(mode as "Road" | "Air")}
             className={`text-[#2B2A29] ${
               route === mode && "bg-primary text-black"
-            } flex items-center justify-center gap-2 h-10 w-1/2 cursor-pointer rounded-3xl text-sm md:text-lg font-medium transition-all`}
+            } flex items-center justify-center gap-2 h-10 w-1/2 cursor-pointer rounded-3xl text-xs md:text-lg font-medium transition-all`}
           >
             <span className="w-6 h-6">
               <Image

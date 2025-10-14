@@ -28,7 +28,7 @@ const ScheduleTrip = () => {
           placeholder="ex. Apple G"
         />
         <ToggleBtn text="Book for myself!" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 md:gap-4">
           <InputBox
             label="Mobile Number"
             type="number"
@@ -64,7 +64,7 @@ const ScheduleTrip = () => {
         <p className="text-xl sm:text-2xl font-semibold mb-4">
           Pickup Location
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 md:gap-4">
           <InputBox
             label="from Pincode"
             isRequired={true}

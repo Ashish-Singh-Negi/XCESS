@@ -19,7 +19,7 @@ const TripDetails = () => {
 
       {/* Customer Info */}
       <section className="w-full border border-[#C3C3C3] rounded-3xl bg-white shadow-md px-6 sm:px-10 py-8">
-        <p className="text-xl sm:text-2xl font-semibold mb-4">
+        <p className="text-xl sm:text-2xl font-semibold md:mb-4">
           Customer Information
         </p>
         <InputBox
@@ -28,7 +28,7 @@ const TripDetails = () => {
           placeholder="ex. Apple G"
         />
         <ToggleBtn text="Book for myself!" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 md:gap-4">
           <InputBox
             label="Mobile Number"
             type="number"
@@ -46,10 +46,10 @@ const TripDetails = () => {
 
       {/* Trip Info */}
       <section className="w-full border border-[#C3C3C3] rounded-3xl bg-white shadow-md px-6 sm:px-10 py-8">
-        <p className="text-xl sm:text-2xl font-semibold mb-4">
+        <p className="text-xl sm:text-2xl font-semibold md:mb-4">
           Trip Information
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 md:gap-4">
           <InputBox
             label="Luggage Pickup Date & Time"
             isRequired={true}
@@ -67,10 +67,10 @@ const TripDetails = () => {
 
       {/* Drop off Location */}
       <section className="w-full border border-[#C3C3C3] rounded-3xl bg-white shadow-md px-6 sm:px-10 py-8">
-        <p className="text-xl sm:text-2xl font-semibold mb-4">
+        <p className="text-xl sm:text-2xl font-semibold md:mb-4">
           Drop-off Location
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-2 md:gap-4">
           <InputBox
             label="Drop Pincode"
             isRequired={true}
@@ -88,8 +88,8 @@ const TripDetails = () => {
           isRequired={true}
           placeholder="Enter street, landmark, and building name..."
         />
-        <p className="h-0.5 w-full bg-[#EEEEEE] my-12"></p>
-        <p className="text-xl sm:text-2xl font-semibold mb-10">
+        <p className="h-0.5 w-full bg-[#EEEEEE] my-6 md:my-12"></p>
+        <p className="text-xl sm:text-2xl font-semibold md:mb-10">
           Additional Information
         </p>
         <TextareaBox

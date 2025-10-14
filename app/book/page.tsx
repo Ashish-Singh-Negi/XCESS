@@ -164,12 +164,12 @@ const BookingPage = () => {
 
           {bookingStages[currentBookingStage].Component}
 
-          <section className="w-full flex justify-end mt-8 px-10 ">
+          <section className="w-full flex justify-end md:mt-8 md:px-10 ">
             <div className="flex gap-6 ">
               {currentBookingStage >= 1 && (
                 <button
                   onClick={() => prevBookingStageHandler()}
-                  className="h-fit px-6 py-2 border-2 text-[#5D5D5D] border-[#707070] text-xl rounded-2xl font-medium flex items-center gap-2"
+                  className="h-fit px-4 md:px-6 py-2 border-2 text-[#5D5D5D] border-[#707070] text-base md:text-xl rounded-2xl font-medium flex items-center gap-2 active:scale-95 transition-transform"
                 >
                   <GoArrowLeft size={24} /> Back
                 </button>
@@ -177,7 +177,7 @@ const BookingPage = () => {
               {currentBookingStage < 3 && (
                 <button
                   onClick={() => nextBookingStageHandler()}
-                  className="h-fit border-2 border-primary flex items-center gap-2 px-6 py-2 bg-primary text-xl rounded-2xl font-medium"
+                  className="h-fit border-2 border-primary flex items-center gap-2 px-4 md:px-6 py-2 bg-primary text-base md:text-xl rounded-2xl font-medium active:scale-95 transition-transform"
                 >
                   Next <GoArrowRight size={24} />
                 </button>

@@ -92,16 +92,16 @@ const PaymentSelection = () => {
     useState<PaymentType>("Credit/Debit card");
 
   return (
-    <div className="h-fit w-[563px] border-2 border-[#DFDFDF] bg-[#FFFDF3] rounded-2xl px-8 pt-6 pb-10">
-      <h2 className="text-2xl font-semibold border-b-2 border-[#A8A8A8] pb-4">
+    <div className="h-fit sm:w-[563px] border-2 border-[#DFDFDF] bg-[#FFFDF3] rounded-2xl px-4 sm:px-8 pt-6 pb-10">
+      <h2 className="text-base md:text-2xl font-semibold border-b-2 border-[#A8A8A8] pb-4">
         Select your Payment method
       </h2>
 
-      <main className="h-full flex flex-col gap-4 mt-10">
+      <main className="h-full w-fit flex flex-col gap-4 mt-6 sm:mt-10">
         {paymentOptions.map((option) => (
           <div
             key={option.type}
-            className="h-fit w-[490px] bg-white border-2 border-[#E1E1E1] rounded-2xl px-6 py-5"
+            className="h-fit sm:w-[490px] bg-white border-2 border-[#E1E1E1] rounded-2xl px-4 sm:px-6 py-5"
             onClick={() => setSelectedPaymentType(option.type as PaymentType)}
           >
             <div
@@ -110,20 +110,20 @@ const PaymentSelection = () => {
                 "border-b-2 border-[#EFEFEF] pb-4"
               } w-full flex items-center justify-between`}
             >
-              <div className="flex items-center gap-6">
+              <div className="flex items-center gap-4 sm:gap-6">
                 {selectedPaymentType === option.type ? (
-                  <div className="size-6 border-[1px] border-[#FFD008] rounded-full flex justify-center items-center">
-                    <div className="size-4 bg-[#FFD008] rounded-full"></div>
+                  <div className="size-4 sm:size-6 border-[1px] border-[#FFD008] rounded-full flex justify-center items-center">
+                    <div className="size-3 bg-[#FFD008] rounded-full"></div>
                   </div>
                 ) : (
-                  <div className="cursor-pointer size-6 border-[1px] border-[#2B2A29] rounded-full flex justify-center items-center"></div>
+                  <div className="cursor-pointer size-4 sm:size-6 border-[1px] border-[#2B2A29] rounded-full flex justify-center items-center"></div>
                 )}
-                {option.Icon}
-                <p className="text-base font-semibold">{option.type}</p>
+                <div className="size-5">{option.Icon}</div>
+                <p className="text-[10px] sm:text-base font-semibold">
+                  {option.type}
+                </p>
               </div>
-              <div className="grid grid-cols-2 items-center gap-3">
-                {option.OtherIcons}
-              </div>
+              <div className="flex items-center gap-3">{option.OtherIcons}</div>
             </div>
 
             {selectedPaymentType === option.type && option.Component}
