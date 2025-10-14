@@ -21,7 +21,7 @@ const NavBar = () => {
     <>
       <button
         onClick={() => setActive(!active)}
-        className="flex sm:hidden flex-col gap-1.5 overflow-hidden"
+        className="flex lg:hidden flex-col gap-1.5 overflow-hidden"
       >
         <span
           className={`${

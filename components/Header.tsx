@@ -3,7 +3,6 @@
 import Image from "next/image";
 import NavBar from "./NavBar";
 import Link from "next/link";
-import { useState } from "react";
 
 const Header = () => {
   return (
