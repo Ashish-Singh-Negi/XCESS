@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FiMinus, FiPlus } from "react-icons/fi";
+import Info from "./Info";
 
 const PackageCard = ({
   imageSrc,
@@ -27,7 +28,7 @@ const PackageCard = ({
           {" "}
           <Image src={imageSrc} alt={type} height={40} width={40} />
         </div>
-        <div className="w-[136px] sm:w-44 flex items-center">
+        <div className="w-32 sm:w-44 flex items-center">
           <p className="text-xs sm:text-sm font-semibold">{type}</p>
           <span className="size-1 bg-black rounded-full ml-2">.</span>
           <span className="text-[#999999] text-xs sm:text-sm ml-2">
@@ -58,14 +59,22 @@ const PackageCard = ({
           Qty: {quantity}
         </span>
       </div>
-      <p className="hidden sm:block sm:size-[12px] mt-2">
+      <div className="relative group hidden sm:block sm:size-[12px] mt-2">
         <Image
           src="/icons/Comment-info.svg"
           alt="comment info icon"
           height={16}
           width={16}
         />
-      </p>
+
+        <Info
+          imgSrc={imageSrc}
+          type={type}
+          weight={weight}
+          price={price}
+          quantity={quantity}
+        />
+      </div>
     </div>
   );
 };

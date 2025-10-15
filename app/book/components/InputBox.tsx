@@ -25,7 +25,7 @@ const InputBox = ({
         <input
           type={type}
           placeholder={placeholder}
-          className="block h-10 md:h-14 w-full rounded-lg md:rounded-2xl outline-none border-2 border-[#B5B5B5]  px-3 sm:px-5 py-2 focus-within:border-primary text-base md:text-lg mt-1 md:mt-2"
+          className="block caret-primary h-10 md:h-14 w-full rounded-lg md:rounded-2xl outline-none border-2 border-[#B5B5B5]  px-3 sm:px-5 py-2 focus-within:border-primary text-base md:text-lg mt-1 md:mt-2"
         />
       </div>
     </div>
