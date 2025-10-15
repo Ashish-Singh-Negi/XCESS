@@ -164,8 +164,12 @@ const BookingPage = () => {
 
           {bookingStages[currentBookingStage].Component}
 
-          <section className="w-full flex justify-end md:mt-8 md:px-10 ">
-            <div className="flex gap-6 ">
+          <section className="w-full flex sm:justify-end md:mt-8 md:px-10 ">
+            <div
+              className={`${
+                currentBookingStage === 0 && "justify-end"
+              } w-full flex justify-between gap-6`}
+            >
               {currentBookingStage >= 1 && (
                 <button
                   onClick={() => prevBookingStageHandler()}

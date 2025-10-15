@@ -27,10 +27,12 @@ const PackageCard = ({
           {" "}
           <Image src={imageSrc} alt={type} height={40} width={40} />
         </div>
-        <div className="w-44 flex items-center">
+        <div className="w-[136px] sm:w-44 flex items-center">
           <p className="text-xs sm:text-sm font-semibold">{type}</p>
           <span className="size-1 bg-black rounded-full ml-2">.</span>
-          <span className="text-[#999999] text-sm ml-2">{weight} kgs</span>
+          <span className="text-[#999999] text-xs sm:text-sm ml-2">
+            {weight} kgs
+          </span>
         </div>
         <div className="flex text-sm items-center justify-between gap-1 sm:gap-4 sm:ml-4">
           <button
@@ -56,7 +58,7 @@ const PackageCard = ({
           Qty: {quantity}
         </span>
       </div>
-      <p className="size-[12px] mt-2">
+      <p className="hidden sm:block sm:size-[12px] mt-2">
         <Image
           src="/icons/Comment-info.svg"
           alt="comment info icon"
