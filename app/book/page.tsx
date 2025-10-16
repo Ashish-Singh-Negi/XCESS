@@ -68,11 +68,11 @@ const BookingPage = () => {
           <p className="w-24 sm:w-1/6 h-0.5 bg-gradient-to-r from-[#FFFFFF] via-[#FFD008] to-[#FFFFFF]"></p>
 
           {/* Booking progess bar */}
-          <div className="h-5 sm:h-14 w-full flex justify-between items-center mt-2 sm:mt-10 mb-10 sm:mb-20 px-6 sm:px-0">
+          <div className="h-7 sm:h-14 w-full flex justify-between items-center mt-2 sm:mt-10 mb-10 sm:mb-20 px-6 sm:px-0">
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[0].isComplete ? (
-                <div className="size-4 sm:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
-                  <div className="size-2 sm:size-[52px] flex items-center justify-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
+                  <div className="size-2 md:size-4 lg:size-[52px] flex items-center justify-center">
                     <Image
                       src="/icons/Check-icon.png"
                       alt="Down Arrow icon"
@@ -82,11 +82,11 @@ const BookingPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="size-4 sm:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
                   1
                 </div>
               )}
-              <p className="absolute top-full text-[8px] sm:text-base font-medium text-center">
+              <p className="absolute top-full text-[8px] md:text-xs lg:text-base font-medium text-center">
                 {bookingStages[0].name}
               </p>
             </div>
@@ -97,8 +97,8 @@ const BookingPage = () => {
             )}
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[1].isComplete ? (
-                <div className="size-4 sm:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
-                  <div className="size-2 sm:size-[52px] flex items-center justify-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
+                  <div className="size-2 md:size-4 lg:size-[52px] flex items-center justify-center">
                     <Image
                       src="/icons/Check-icon.png"
                       alt="Down Arrow icon"
@@ -108,11 +108,11 @@ const BookingPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="size-4 sm:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
                   2
                 </div>
               )}
-              <p className="absolute top-full text-[8px] sm:text-base font-medium text-center">
+              <p className="absolute top-full text-[8px] md:text-xs lg:text-base font-medium text-center">
                 {bookingStages[1].name}
               </p>
             </div>
@@ -124,8 +124,8 @@ const BookingPage = () => {
 
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[2].isComplete ? (
-                <div className="size-4 sm:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
-                  <div className="size-2 sm:size-[52px] flex items-center justify-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
+                  <div className="size-2 md:size-4 lg:size-[52px] flex items-center justify-center">
                     <Image
                       src="/icons/Check-icon.png"
                       alt="Down Arrow icon"
@@ -135,11 +135,11 @@ const BookingPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="size-4 sm:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
                   3
                 </div>
               )}
-              <p className="absolute top-full text-[8px] sm:text-base font-medium text-center">
+              <p className="absolute top-full text-[8px] md:text-xs lg:text-base font-medium text-center">
                 {bookingStages[2].name}
               </p>
             </div>
@@ -151,8 +151,8 @@ const BookingPage = () => {
 
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[3].isComplete ? (
-                <div className="size-4 sm:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
-                  <div className="size-2 sm:size-[52px] flex items-center justify-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
+                  <div className="size-2 md:size-4 lg:size-[52px] flex items-center justify-center">
                     <Image
                       src="/icons/Check-icon.png"
                       alt="Down Arrow icon"
@@ -162,11 +162,11 @@ const BookingPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="size-4 sm:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
                   4
                 </div>
               )}
-              <p className="absolute top-full text-[8px] sm:text-base font-medium text-center">
+              <p className="absolute top-full text-[8px] md:text-xs lg:text-base font-medium text-center">
                 {bookingStages[3].name}
               </p>
             </div>

@@ -24,15 +24,15 @@ const CouponCard = () => {
         </div>
       </div>
 
-      <div className="relative xl:hidden w-full">
+      <div className="xl:hidden w-full">
         <label className="block text-[10px]">Do you have a coupon?</label>
-        <div className="w-full flex">
+        <div className="relative h-8 w-full flex">
           <input
             type="text"
             placeholder="AppleG2025"
-            className="h-10 w-full border-[1px] focus-within:border-primary border-[#DCDCDC] rounded-xl text-sm px-3 pr-[84px] py-2 outline-none caret-primary"
+            className="h-full w-full border-[1px] focus-within:border-primary border-[#DCDCDC] rounded-xl text-xs px-3 pr-[84px] py-2 outline-none caret-primary"
           />
-          <button className="absolute bottom-0 right-0 px-5 py-2 font-medium bg-primary rounded-xl">
+          <button className="h-full absolute bottom-0 right-0 px-5 py-2 text-xs font-medium bg-primary rounded-xl">
             Apply
           </button>
         </div>
