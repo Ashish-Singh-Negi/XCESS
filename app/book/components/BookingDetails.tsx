@@ -120,7 +120,7 @@ const BookingDetails = () => {
           <section className="xl:h-28 w-full xl:w-[952px] flex flex-col xl:flex-row sm:justify-between">
             <CouponCard />
             <div className="md:h-28 border-[1px] border-[#C3C3C3] py-4 rounded-2xl shadow-md mt-8 xl:my-0">
-              <div className="h-full flex items-center px-6 lg:px-10 lg:gap-10">
+              <div className="h-full flex items-center lg:px-10 lg:gap-10">
                 <p className="w-full text-xs sm:text-base flex flex-col text-center">
                   Freight Charge
                   <span className="text-sm md:text-2xl font-semibold">
