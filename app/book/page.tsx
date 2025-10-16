@@ -82,7 +82,7 @@ const BookingPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="size-7 sm:size-10 lg:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] text-base sm:text-lg lg:text-2xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
                   1
                 </div>
               )}
@@ -108,7 +108,7 @@ const BookingPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="size-7 sm:size-10 lg:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] text-base sm:text-lg lg:text-2xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
                   2
                 </div>
               )}
@@ -135,7 +135,7 @@ const BookingPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="size-7 sm:size-10 lg:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] text-base sm:text-lg lg:text-2xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
                   3
                 </div>
               )}
@@ -162,7 +162,7 @@ const BookingPage = () => {
                   </div>
                 </div>
               ) : (
-                <div className="size-7 sm:size-10 lg:size-[52px] text-[8px] sm:text-3xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
+                <div className="size-7 sm:size-10 lg:size-[52px] text-base sm:text-lg lg:text-2xl text-[#DFDFDF] rounded-full border-2 border-[#DFDFDF] flex justify-center items-center">
                   4
                 </div>
               )}

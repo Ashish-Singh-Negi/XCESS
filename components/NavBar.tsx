@@ -46,7 +46,7 @@ const NavBar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="absolute top-full left-0 h-screen w-full bg-white flex flex-col"
+            className="absolute shadow-lg top-full left-0 h-screen w-full bg-white flex flex-col"
           >
             {navs.map((nav) => (
               <Link
@@ -54,7 +54,7 @@ const NavBar = () => {
                 key={nav.name}
                 href={nav.href}
                 className={`${
-                  nav.href === pathname && "bg-primary/50"
+                  nav.href === pathname && "bg-primary/30"
                 } px-6 py-4 text-xl font-medium cursor-pointer transition-all`}
               >
                 {nav.name}
