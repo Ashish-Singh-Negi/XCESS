@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="fixed z-20 w-full bg-white border-b-2 border-[#E2E2E2]">
+    <header className="fixed z-20 w-full bg-white shadow-md">
       <div className="w-[90%] py-4 sm:py-3 flex sm:flex-wrap md:flex-nowrap justify-between items-center mx-auto gap-4">
         <Link
           href={"/"}
