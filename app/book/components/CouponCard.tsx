@@ -1,7 +1,7 @@
 const CouponCard = () => {
   return (
     <>
-      <div className="hidden md:flex h-[106px] w-[360px] p-3.5 items-center overflow-y-hidden">
+      <div className="hidden xl:flex h-[106px] w-[360px] p-3.5 items-center overflow-y-hidden">
         <div className="border-l-[1px] border-y-[1px] border-[#CECECE] p-3.5 rounded-l-lg -mr-[1px]">
           <p className="text-sm font-semibold ">Do you have coupon ?</p>
           <div className="mt-1">
@@ -24,7 +24,7 @@ const CouponCard = () => {
         </div>
       </div>
 
-      <div className="relative md:hidden w-full">
+      <div className="relative xl:hidden w-full">
         <label className="block text-[10px]">Do you have a coupon?</label>
         <div className="w-full flex">
           <input
