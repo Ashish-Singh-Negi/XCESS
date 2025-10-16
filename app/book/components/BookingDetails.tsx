@@ -20,64 +20,64 @@ const BookingDetails = () => {
         <Payment />
       ) : (
         <>
-          <section className="md:h-[530px] w-full md:w-[952px] border-2 border-[#E4E4E4] rounded-3xl shadow-md px-6 md:px-10 py-6 sm:py-8">
-            <h2 className="text-xl sm:text-3xl font-bold">Booking Details</h2>
-            <h3 className="text-base sm:text-2xl font-semibold mt-6">
+          <section className="lg:h-[530px] w-full lg:w-[952px] border-2 border-[#E4E4E4] rounded-3xl shadow-md px-6 lg:px-10 py-6 sm:py-8">
+            <h2 className="text-xl lg:text-3xl font-bold">Booking Details</h2>
+            <h3 className="text-base lg:text-2xl font-semibold mt-6">
               Nainesh Ramani
             </h3>
-            <p className="text-[#505050] text-xs sm:text-base">
+            <p className="text-[#505050] text-xs lg:text-base">
               123, mainroad, Bangalore, Karnataka - 560001 <br /> 380024
               (Ahmedabad) → 560001 (Bangalore) <br /> naineshcygnux@gmail.com{" "}
               <br /> 9780295193
             </p>
-            <p className="my-4 border-dashed border-b-[1px] sm:border-b-2 border-[#818181]"></p>
+            <p className="my-4 border-dashed border-b-[1px] lg:border-b-2 border-[#818181]"></p>
 
-            <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-x-10 gap-y-5">
-              <p className="text-[10px] sm:text-lg text-[#505050] flex flex-col">
+            <div className="w-full grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-5">
+              <p className="text-[10px] lg:text-lg text-[#505050] flex flex-col">
                 Pickup Date
-                <span className="text-xs sm:text-xl text-[#282828] font-semibold -mt-0.5">
+                <span className="text-xs lg:text-xl text-[#282828] font-semibold -mt-0.5">
                   27-09-2025 at 04:55 PM
                 </span>
               </p>
-              <p className="text-[10px] sm:text-lg text-[#505050] flex flex-col">
+              <p className="text-[10px] lg:text-lg text-[#505050] flex flex-col">
                 Drop Date
-                <span className="text-xs sm:text-xl text-[#282828] font-semibold -mt-0.5">
+                <span className="text-xs lg:text-xl text-[#282828] font-semibold -mt-0.5">
                   24-10-2025 at 12:00 AM
                 </span>
               </p>
-              <p className="text-[10px] sm:text-lg text-[#505050] flex flex-col">
+              <p className="text-[10px] lg:text-lg text-[#505050] flex flex-col">
                 No. of Pkgs
-                <span className="text-xs sm:text-xl text-[#282828] font-semibold -mt-0.5">
+                <span className="text-xs lg:text-xl text-[#282828] font-semibold -mt-0.5">
                   3
                 </span>
               </p>
-              <p className="text-[10px] sm:text-lg text-[#505050] flex flex-col">
+              <p className="text-[10px] lg:text-lg text-[#505050] flex flex-col">
                 Total Weight
-                <span className="text-xs sm:text-xl text-[#282828] font-semibold -mt-0.5">
+                <span className="text-xs lg:text-xl text-[#282828] font-semibold -mt-0.5">
                   50 KGs
                 </span>
               </p>
             </div>
 
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 mt-12">
-              <p className="sm:w-[258px] text-[10px] sm:text-lg text-[#505050] flex flex-col">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-2 mt-12">
+              <p className="lg:w-[258px] text-[10px] lg:text-lg text-[#505050] flex flex-col">
                 Remarks*
-                <span className="text-xs sm:text-lg text-[#282828] font-semibold -mt-0.5">
+                <span className="text-xs lg:text-lg text-[#282828] font-semibold -mt-0.5">
                   keep it safe parcel contains glass work...
                 </span>
               </p>
               <div className="flex items-center gap-2 my-6">
-                <div className="size-5 md:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
-                <p className="text-xs sm:text-lg text-[#505050]">
+                <div className="size-5 lg:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
+                <p className="text-xs lg:text-lg text-[#505050]">
                   Add Secure Packaging (₹50 per package)
                 </p>
               </div>
             </div>
           </section>
 
-          <div className="w-full my-1 sm:my-4 flex items-center justify-center">
-            <button className="flex gap-2 text-sm sm:text-2xl font-medium text-[#448C00]">
-              <span className="size-5 md:size-[34px]">
+          <div className="w-full my-1 lg:my-4 flex items-center justify-center">
+            <button className="flex gap-2 text-sm lg:text-2xl font-medium text-[#448C00]">
+              <span className="size-5 lg:size-[34px]">
                 {" "}
                 <Image
                   src={"/icons/Add-icon.svg"}
@@ -120,7 +120,7 @@ const BookingDetails = () => {
           <section className="xl:h-28 w-full xl:w-[952px] flex flex-col xl:flex-row sm:justify-between">
             <CouponCard />
             <div className="md:h-28 border-[1px] border-[#C3C3C3] py-4 rounded-2xl shadow-md mt-8 xl:my-0">
-              <div className="h-full flex items-center gap-10 px-6">
+              <div className="h-full flex items-center px-6 lg:px-10 lg:gap-10">
                 <p className="w-full text-xs sm:text-base flex flex-col text-center">
                   Freight Charge
                   <span className="text-sm md:text-2xl font-semibold">

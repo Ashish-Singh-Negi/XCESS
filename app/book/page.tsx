@@ -72,7 +72,7 @@ const BookingPage = () => {
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[0].isComplete ? (
                 <div className="size-4 sm:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
-                  <div className="size-2 sm:size-[52px]">
+                  <div className="size-2 sm:size-[52px] flex items-center justify-center">
                     <Image
                       src="/icons/Check-icon.png"
                       alt="Down Arrow icon"
@@ -98,7 +98,7 @@ const BookingPage = () => {
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[1].isComplete ? (
                 <div className="size-4 sm:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
-                  <div className="size-2 sm:size-[52px]">
+                  <div className="size-2 sm:size-[52px] flex items-center justify-center">
                     <Image
                       src="/icons/Check-icon.png"
                       alt="Down Arrow icon"
@@ -125,7 +125,7 @@ const BookingPage = () => {
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[2].isComplete ? (
                 <div className="size-4 sm:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
-                  <div className="size-2 sm:size-[52px]">
+                  <div className="size-2 sm:size-[52px] flex items-center justify-center">
                     <Image
                       src="/icons/Check-icon.png"
                       alt="Down Arrow icon"
@@ -152,7 +152,7 @@ const BookingPage = () => {
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[3].isComplete ? (
                 <div className="size-4 sm:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
-                  <div className="size-2 sm:size-[52px]">
+                  <div className="size-2 sm:size-[52px] flex items-center justify-center">
                     <Image
                       src="/icons/Check-icon.png"
                       alt="Down Arrow icon"
