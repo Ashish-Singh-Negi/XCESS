@@ -20,7 +20,7 @@ const BookingDetails = () => {
         <Payment />
       ) : (
         <>
-          <section className="lg:h-[530px] w-full lg:w-[952px] border-2 border-[#E4E4E4] rounded-3xl shadow-md px-6 lg:px-10 py-6 sm:py-8">
+          <section className="lg:h-[530px] w-full lg:w-[1040px] border-2 border-[#E4E4E4] rounded-3xl shadow-md px-6 lg:px-10 py-6 sm:py-8">
             <h2 className="text-xl lg:text-3xl font-bold">Booking Details</h2>
             <h3 className="text-base lg:text-2xl font-semibold mt-6">
               Nainesh Ramani
@@ -91,12 +91,12 @@ const BookingDetails = () => {
           </div>
 
           <div className="w-full xl:w-[952px] md:mt-4">
-            <p className="text-xs md:text-xl text-[#003983]">
+            <p className="text-xs md:text-base xl:text-xl text-[#003983]">
               Terms and Conditons
             </p>
             <div className="flex items-center gap-2 mt-2 md:mt-4">
-              <div className="size-5 md:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
-              <p className="text-[10px] md:text-lg">
+              <div className="size-5 md:size-6 xl:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
+              <p className="text-[10px] md:text-sm xl:text-lg">
                 I agree to the{" "}
                 <Link
                   href={"terms-and-conditions"}
@@ -107,8 +107,8 @@ const BookingDetails = () => {
               </p>
             </div>
             <div className="flex items-center gap-2 mt-2 md:mt-4">
-              <div className="size-5 md:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
-              <p className="text-[10px] md:text-lg">
+              <div className="size-5 md:size-6 xl:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
+              <p className="text-[10px] md:text-sm xl:text-lg">
                 I agree to the{" "}
                 <Link href={"policy"} className="text-[#003983] underline">
                   Privacy policy
@@ -117,45 +117,45 @@ const BookingDetails = () => {
             </div>
           </div>
 
-          <section className="xl:h-28 w-full xl:w-[952px] flex flex-col xl:flex-row sm:justify-between">
+          <section className="xl:h-28 w-full xl:w-[1040px] flex flex-col xl:flex-row sm:justify-between">
             <CouponCard />
             <div className="md:h-28 border-[1px] border-[#C3C3C3] py-4 rounded-2xl shadow-md mt-8 xl:my-0">
               <div className="h-full flex items-center lg:px-10 lg:gap-10">
-                <p className="w-full text-xs sm:text-base flex flex-col text-center">
+                <p className="w-full text-xs sm:text-sm lg:text-base flex flex-col text-center">
                   Freight Charge
-                  <span className="text-sm md:text-2xl font-semibold">
-                    ₹10738.00
+                  <span className="text-sm md:text-base lg:text-xl font-semibold">
+                    ₹107383562.00
                   </span>
                 </p>
                 <p className="h-full w-0.5 bg-[#A6A6A6]"></p>
-                <p className="w-full text-xs sm:text-base flex flex-col text-center">
+                <p className="w-full text-xs sm:text-sm lg:text-base flex flex-col text-center">
                   GST @18%
-                  <span className="text-sm md:text-2xl font-semibold">
-                    ₹1932.84
+                  <span className="text-sm md:text-base lg:text-xl font-semibold">
+                    ₹19323562.84
                   </span>
                 </p>
                 <p className="h-full w-0.5 bg-[#A6A6A6]"></p>
-                <p className="w-full text-xs sm:text-base flex flex-col text-center">
+                <p className="w-full text-xs sm:text-sm lg:text-base flex flex-col text-center">
                   Total Amount
-                  <span className="text-sm md:text-2xl font-semibold text-[#56AB06]">
-                    ₹12670.84
+                  <span className="text-sm md:text-base lg:text-xl font-semibold text-[#56AB06]">
+                    ₹126703562.84
                   </span>
                 </p>
               </div>
             </div>
           </section>
 
-          <section className="w-full xl:w-[952px] border-[1px] border-[#CACACA] rounded-2xl px-4 md:px-10 py-2 md:py-6 flex justify-between items-center">
-            <p className="flex flex-col text-[10px] md:text-lg leading-tight">
+          <section className="w-full xl:w-[1040px] border-[1px] border-[#CACACA] rounded-2xl px-4 md:px-10 py-2 md:py-6 flex justify-between items-center">
+            <p className="flex flex-col text-[10px] sm:text-xs md:text-base leading-tight">
               Total Payable
-              <span className="text-base md:text-3xl text-[#56AB06] font-semibold">
+              <span className="text-base sm:text-xl lg:text-2xl text-[#56AB06] font-semibold">
                 ₹12670.84
               </span>
             </p>
-            <div className="bg-gradient-to-r from-primary via-primary via-70% to-white flex items-center rounded-xl md:rounded-2xl px-0.5 py-0.5 text-2xl font-medium">
+            <div className="bg-gradient-to-r from-primary via-primary via-70% to-white flex items-center rounded-xl md:rounded-2xl px-0.5 py-0.5 font-medium">
               <button
                 onClick={() => setPayment(true)}
-                className="bg-primary cursor-pointer rounded-xl md:rounded-2xl px-6 py-2 text-xs md:text-2xl font-medium active:scale-95 transition-transform"
+                className="bg-primary cursor-pointer rounded-xl md:rounded-2xl px-6 py-2 text-xs sm:text-base md:text-xl lg:text-2xl font-medium active:scale-95 transition-transform"
               >
                 Pay and Confirm
               </button>

@@ -24,8 +24,10 @@ const CouponCard = () => {
         </div>
       </div>
 
-      <div className="xl:hidden w-full">
-        <label className="block text-[10px]">Do you have a coupon?</label>
+      <div className="xl:hidden w-full sm:w-96">
+        <label className="block text-[10px] sm:text-xs">
+          Do you have a coupon?
+        </label>
         <div className="relative h-8 w-full flex">
           <input
             type="text"

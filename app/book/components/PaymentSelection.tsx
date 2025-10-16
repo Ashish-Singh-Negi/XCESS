@@ -92,12 +92,12 @@ const PaymentSelection = () => {
     useState<PaymentType>("Credit/Debit card");
 
   return (
-    <div className="h-fit sm:w-[563px] border-2 border-[#DFDFDF] bg-[#FFFDF3] rounded-2xl px-4 sm:px-8 pt-6 pb-10">
-      <h2 className="text-base md:text-2xl font-semibold border-b-2 border-[#A8A8A8] pb-4">
+    <div className="h-fit sm:w-[563px] border-2 border-[#DFDFDF] bg-[#FFFDF3] flex flex-col items-center rounded-2xl px-4 sm:px-8 pt-6 pb-10">
+      <h2 className="w-full text-base md:text-2xl font-semibold border-b-2 border-[#A8A8A8] pb-4">
         Select your Payment method
       </h2>
 
-      <main className="h-full w-fit flex flex-col gap-4 mt-6 sm:mt-10">
+      <main className="h-full w-fit flex flex-col gap-4 mt-4 sm:mt-6">
         {paymentOptions.map((option) => (
           <div
             key={option.type}
