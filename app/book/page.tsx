@@ -183,7 +183,7 @@ const BookingPage = () => {
               {currentBookingStage >= 1 && (
                 <button
                   onClick={() => prevBookingStageHandler()}
-                  className="h-fit px-4 md:px-6 py-2 border-2 text-[#5D5D5D] border-[#707070] text-base md:text-xl rounded-2xl font-medium flex items-center gap-2 active:scale-95 transition-transform"
+                  className="h-fit cursor-pointer px-4 md:px-6 py-2 border-2 text-[#5D5D5D] border-[#707070] text-base md:text-xl rounded-2xl font-medium flex items-center gap-2 active:scale-95 transition-transform"
                 >
                   <GoArrowLeft size={24} /> Back
                 </button>
@@ -191,7 +191,7 @@ const BookingPage = () => {
               {currentBookingStage < 3 && (
                 <button
                   onClick={() => nextBookingStageHandler()}
-                  className="h-fit border-2 border-primary flex items-center gap-2 px-4 md:px-6 py-2 bg-primary text-base md:text-xl rounded-2xl font-medium active:scale-95 transition-transform"
+                  className="h-fit cursor-pointer border-2 border-primary flex items-center gap-2 px-4 md:px-6 py-2 bg-primary text-base md:text-xl rounded-2xl font-medium active:scale-95 transition-transform"
                 >
                   Next <GoArrowRight size={24} />
                 </button>

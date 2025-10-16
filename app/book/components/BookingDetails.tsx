@@ -7,10 +7,10 @@ import { useState } from "react";
 import Payment from "./Payment";
 
 const BookingDetails = () => {
-  // const [isTermsAndConditionsAgreed, setIsTermsAndConditionsAgreed] =
-  //   useState(false);
-  // const [isPrivacyPolicyAgreed, setIsPrivacyPolicyAgreed] = useState(false);
-  // const [isSecuredPackage, setIsSecuredPackage] = useState(false);
+  const [isTermsAndConditionsAgreed, setIsTermsAndConditionsAgreed] =
+    useState(false);
+  const [isPrivacyPolicyAgreed, setIsPrivacyPolicyAgreed] = useState(false);
+  const [isSecuredPackage, setIsSecuredPackage] = useState(false);
 
   const [payment, setPayment] = useState(false);
 
@@ -67,7 +67,24 @@ const BookingDetails = () => {
                 </span>
               </p>
               <div className="flex items-center gap-2 my-6">
-                <div className="size-5 lg:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
+                {isSecuredPackage ? (
+                  <button
+                    onClick={() => setIsSecuredPackage(!isSecuredPackage)}
+                    className="size-5 md:size-6 xl:size-[27px] flex items-center justify-center rounded-md border-[1px] bg-primary border-[#868686] cursor-pointer"
+                  >
+                    <Image
+                      src={"/icons/Check-icon.png"}
+                      alt="check icon"
+                      height={14}
+                      width={14}
+                    />
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setIsSecuredPackage(!isSecuredPackage)}
+                    className="size-5 md:size-6 xl:size-[27px] block rounded-md border-[1px] border-[#868686] cursor-pointer"
+                  ></button>
+                )}
                 <p className="text-xs lg:text-lg text-[#505050]">
                   Add Secure Packaging (₹50 per package)
                 </p>
@@ -76,7 +93,7 @@ const BookingDetails = () => {
           </section>
 
           <div className="w-full my-1 lg:my-4 flex items-center justify-center">
-            <button className="flex gap-2 text-sm lg:text-2xl font-medium text-[#448C00]">
+            <button className="flex gap-2 text-sm lg:text-2xl font-medium text-[#448C00] cursor-pointer">
               <span className="size-5 lg:size-[34px]">
                 {" "}
                 <Image
@@ -95,7 +112,28 @@ const BookingDetails = () => {
               Terms and Conditons
             </p>
             <div className="flex items-center gap-2 mt-2 md:mt-4">
-              <div className="size-5 md:size-6 xl:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
+              {isTermsAndConditionsAgreed ? (
+                <button
+                  onClick={() =>
+                    setIsTermsAndConditionsAgreed(!isTermsAndConditionsAgreed)
+                  }
+                  className="size-5 md:size-6 xl:size-[27px] flex items-center justify-center rounded-md border-[1px] bg-primary border-[#868686] cursor-pointer"
+                >
+                  <Image
+                    src={"/icons/Check-icon.png"}
+                    alt="check icon"
+                    height={14}
+                    width={14}
+                  />
+                </button>
+              ) : (
+                <button
+                  onClick={() =>
+                    setIsTermsAndConditionsAgreed(!isTermsAndConditionsAgreed)
+                  }
+                  className="size-5 md:size-6 xl:size-[27px] block rounded-md border-[1px] border-[#868686] cursor-pointer"
+                ></button>
+              )}
               <p className="text-[10px] md:text-sm xl:text-lg">
                 I agree to the{" "}
                 <Link
@@ -107,7 +145,28 @@ const BookingDetails = () => {
               </p>
             </div>
             <div className="flex items-center gap-2 mt-2 md:mt-4">
-              <div className="size-5 md:size-6 xl:size-[27px] block rounded-md border-[1px] border-[#868686]"></div>{" "}
+              {isPrivacyPolicyAgreed ? (
+                <button
+                  onClick={() =>
+                    setIsPrivacyPolicyAgreed(!isPrivacyPolicyAgreed)
+                  }
+                  className="size-5 md:size-6 xl:size-[27px] flex items-center justify-center rounded-md border-[1px] bg-primary border-[#868686] cursor-pointer"
+                >
+                  <Image
+                    src={"/icons/Check-icon.png"}
+                    alt="check icon"
+                    height={14}
+                    width={14}
+                  />
+                </button>
+              ) : (
+                <button
+                  onClick={() =>
+                    setIsPrivacyPolicyAgreed(!isPrivacyPolicyAgreed)
+                  }
+                  className="size-5 md:size-6 xl:size-[27px] block rounded-md border-[1px] border-[#868686] cursor-pointer"
+                ></button>
+              )}
               <p className="text-[10px] md:text-sm xl:text-lg">
                 I agree to the{" "}
                 <Link href={"policy"} className="text-[#003983] underline">
@@ -124,21 +183,21 @@ const BookingDetails = () => {
                 <p className="w-full text-xs sm:text-sm lg:text-base flex flex-col text-center">
                   Freight Charge
                   <span className="text-sm md:text-base lg:text-xl font-semibold">
-                    ₹107383562.00
+                    ₹10738.00
                   </span>
                 </p>
                 <p className="h-full w-0.5 bg-[#A6A6A6]"></p>
                 <p className="w-full text-xs sm:text-sm lg:text-base flex flex-col text-center">
                   GST @18%
                   <span className="text-sm md:text-base lg:text-xl font-semibold">
-                    ₹19323562.84
+                    ₹1932.84
                   </span>
                 </p>
                 <p className="h-full w-0.5 bg-[#A6A6A6]"></p>
                 <p className="w-full text-xs sm:text-sm lg:text-base flex flex-col text-center">
                   Total Amount
                   <span className="text-sm md:text-base lg:text-xl font-semibold text-[#56AB06]">
-                    ₹126703562.84
+                    ₹12670.84
                   </span>
                 </p>
               </div>

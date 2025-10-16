@@ -59,7 +59,7 @@ const PackageCard = ({
           Qty: {quantity}
         </span>
       </div>
-      <div className="relative group hidden sm:block sm:size-[12px] mt-2">
+      <div className="relative group hidden lg:block sm:size-[12px] mt-2">
         <Image
           src="/icons/Comment-info.svg"
           alt="comment info icon"
