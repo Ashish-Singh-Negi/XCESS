@@ -1,15 +1,15 @@
 const CouponCard = () => {
   return (
     <>
-      <div className="hidden xl:flex h-[106px] w-[360px] p-3.5 items-center overflow-y-hidden">
-        <div className="border-l-[1px] border-y-[1px] border-[#CECECE] p-3.5 rounded-l-lg -mr-[1px]">
-          <p className="text-sm font-semibold ">Do you have coupon ?</p>
-          <div className="mt-1">
+      <div className="hidden xl:flex h-[106px] w-[440px] items-center border-r-2 overflow-y-hidden">
+        <div className="border-l-[1px] border-y-[1px] border-[#CECECE] p-[24px] rounded-l-lg -mr-[1px]">
+          <p className="text-sm font-semibold">Do you have coupon ?</p>
+          <div className="w-full flex mt-1">
             <input
-              className="h-6 rounded-md outline-none bg-[#E3E3E3] py-0.5 px-2 text-[10px]"
+              className="h-8 w-[204px] rounded-md outline-none bg-[#E3E3E3] py-0.5 px-2 text-sm"
               placeholder="Xcess123"
             />
-            <button className="px-2 py-1 cursor-pointer rounded-lg text-[10px] bg-[#FFE163] ml-2">
+            <button className="px-4 py-1 cursor-pointer rounded-lg text-xs bg-[#FFE163] ml-2 active:scale-95 transition-transform">
               Apply
             </button>
           </div>
@@ -19,8 +19,8 @@ const CouponCard = () => {
           <p className="h-full border-l-[1px] border-[#CECECE] border-dashed ml-3"></p>
           <div className="absolute -bottom-3.5 size-[27px] rounded-full border-[1px] border-[#CECECE] bg-white"></div>
         </div>
-        <div className=" border-r-[1px] border-y-[1px] border-[#CECECE] p-3.5 rounded-r-lg -ml-0.5">
-          <div className="h-[50px] w-8 bg-primary rounded-lg"></div>
+        <div className=" border-r-[1px] border-y-[1px] border-[#CECECE] rounded-r-lg -ml-0.5">
+          <div className="h-[50px] w-8 bg-primary rounded-lg m-[27px]"></div>
         </div>
       </div>
 
