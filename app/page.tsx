@@ -31,7 +31,6 @@ export default function Home() {
 
   const [slides, setSlides] = useState(defaultSlides);
   const mainBannerCarouselRef = useRef<HTMLDivElement>(null);
-  const mainBannerCarouselIndexRef = useRef(0);
 
   const serviceCarouselRef = useRef<HTMLDivElement>(null);
   const serviceCarouselIndexRef = useRef(0);
@@ -44,9 +43,9 @@ export default function Home() {
 
   const nextBannerHandler = () => {
     setSlides((prev) => {
-      let newSlides: string[] = [];
-
       const temp = prev[0];
+
+      const newSlides: string[] = [];
       prev.forEach((slide, index) => {
         if (index >= 1) newSlides.push(slide);
       });
@@ -61,7 +60,7 @@ export default function Home() {
     setSlides((prev) => {
       const temp = prev[prev.length - 1];
 
-      let newSlides: string[] = [];
+      const newSlides: string[] = [];
       prev.forEach((slide, index) => {
         if (index !== prev.length - 1) newSlides.push(slide);
       });
