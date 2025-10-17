@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import ScheduleTrip from "./components/ScheduleTrip";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import TripDetails from "./components/TripDetails";
 import AddPackages from "./components/AddPackages";
@@ -33,6 +33,7 @@ const bookingStages = [
 
 const BookingPage = () => {
   const [currentBookingStage, setCurrentBookingStage] = useState(0);
+  const bookingProgressBarRef = useRef<HTMLDivElement>(null);
 
   const prevBookingStageHandler = () => {
     if (currentBookingStage >= 1) {
@@ -55,6 +56,11 @@ const BookingPage = () => {
           stage.isComplete = true;
         }
       });
+
+      bookingProgressBarRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
     }
   };
 
@@ -68,7 +74,10 @@ const BookingPage = () => {
           <p className="w-24 sm:w-1/6 h-0.5 bg-gradient-to-r from-[#FFFFFF] via-[#FFD008] to-[#FFFFFF]"></p>
 
           {/* Booking progess bar */}
-          <div className="h-7 sm:h-14 w-full flex justify-between items-center mt-2 sm:mt-10 mb-10 sm:mb-20 px-6 sm:px-0">
+          <section
+            ref={bookingProgressBarRef}
+            className="h-7 sm:h-14 w-full flex justify-between items-center mt-2 sm:mt-10 mb-10 sm:mb-20 px-6 sm:px-0"
+          >
             <div className="relative h-full flex flex-col items-center justify-center">
               {bookingStages[0].isComplete ? (
                 <div className="size-7 sm:size-10 lg:size-[52px] rounded-full flex justify-center items-center border-[3px] sm:border-[6px] bg-[#6BDC00] border-[#99FF3A]">
@@ -170,7 +179,7 @@ const BookingPage = () => {
                 {bookingStages[3].name}
               </p>
             </div>
-          </div>
+          </section>
 
           {bookingStages[currentBookingStage].Component}
 
