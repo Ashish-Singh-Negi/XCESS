@@ -45,7 +45,7 @@ const NavBar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
             className="absolute shadow-lg top-full left-0 h-screen w-full bg-white flex flex-col"
           >
             {navs.map((nav) => (
@@ -55,11 +55,23 @@ const NavBar = () => {
                 href={nav.href}
                 className={`${
                   nav.href === pathname && "bg-primary/30"
-                } px-6 py-4 text-xl font-medium cursor-pointer transition-all`}
+                } px-6 py-4 text-xl text-black font-medium cursor-pointer transition-all`}
               >
                 {nav.name}
               </Link>
             ))}
+            {/* <div className="h-full w-full flex flex-col gap-4 px-4 py-4">
+              <Link
+                href={"/book"}
+                className="w-fit py-2 px-6 text-black rounded-3xl font-medium hover:scale-105 transition-transform cursor-pointer active:scale-100"
+              >
+                Book Now
+              </Link>
+              <div className="w-full flex items-center gap-2 text-xl">
+                <div className="w-10 h-10 rounded-full bg-gray-700"></div>{" "}
+                Apple G
+              </div>
+            </div> */}
           </motion.div>
         )}
       </AnimatePresence>

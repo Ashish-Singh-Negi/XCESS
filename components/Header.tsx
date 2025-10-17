@@ -17,7 +17,7 @@ const Header = () => {
 
         <div className="flex items-center gap-4 md:w-auto">
           <NavBar />
-          <div className="hidden sm:flex gap-4">
+          <div className="hidden lg:flex gap-4">
             <Link
               href={"/book"}
               className="py-2 px-6 bg-yellow-400 text-black rounded-3xl font-medium hover:scale-105 transition-transform cursor-pointer active:scale-100"

@@ -37,25 +37,50 @@ export default function Home() {
   const serviceCarouselIndexRef = useRef(0);
   const [serviceCarouselIndex, setServiceCarouselIndex] = useState(0);
 
+  const [isMainBannerSwiped, setIsMainBannerSwiped] = useState(false);
+
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const nextBannerHandler = () => {
+    setSlides((prev) => {
+      let newSlides: string[] = [];
+
+      const temp = prev[0];
+      prev.forEach((slide, index) => {
+        if (index >= 1) newSlides.push(slide);
+      });
+
+      newSlides.push(temp);
+
+      return newSlides;
+    });
+  };
+
+  const prevBannerHandler = () => {
+    setSlides((prev) => {
+      const temp = prev[prev.length - 1];
+
+      let newSlides: string[] = [];
+      prev.forEach((slide, index) => {
+        if (index !== prev.length - 1) newSlides.push(slide);
+      });
+
+      newSlides.unshift(temp);
+
+      return newSlides;
+    });
+  };
+
   useEffect(() => {
+    if (isMainBannerSwiped) return;
+
     const id = setInterval(() => {
-      console.log(slides.length);
-
-      mainBannerCarouselIndexRef.current =
-        (mainBannerCarouselIndexRef.current + 1) % slides.length;
-
-      const container = mainBannerCarouselRef.current;
-      if (container) {
-        const containerWidth = container.offsetWidth;
-        container.scrollTo({
-          left: containerWidth * mainBannerCarouselIndexRef.current,
-          behavior: "smooth",
-        });
-      }
+      nextBannerHandler();
     }, 5000);
 
     return () => clearInterval(id);
-  }, [slides]);
+  }, [slides, isMainBannerSwiped]);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -96,9 +121,36 @@ export default function Home() {
     handleResize();
 
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const minSwipeDistance = 60; // Minimum distance for a swipe to be registered
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null); // Reset previous touch
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      console.log("Swiped left");
+      !isMainBannerSwiped && setIsMainBannerSwiped(true);
+      nextBannerHandler();
+    } else if (isRightSwipe) {
+      console.log("Swiped right");
+      !isMainBannerSwiped && setIsMainBannerSwiped(true);
+      prevBannerHandler();
+    }
+  };
 
   return (
     <main className="w-full flex flex-col items-center">
@@ -118,20 +170,23 @@ export default function Home() {
       </section>
 
       <section
-        className={`absolute min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28`}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+        className={`absolute min-h-[740px] sm:min-h-[800px] lg:min-h-[1024px] w-full rounded-b-3xl sm:rounded-none bg-center bg-cover bg-no-repeat pt-[72px] md:pt-28 flex items-end sm:items-center`}
       >
-        <div className="px-6 sm:px-12 lg:px-24 py-20 md:py-20 lg:py-32 sm:text-left flex flex-col items-center sm:block">
+        <div className="w-full px-4 sm:px-12 lg:px-24 py-14 md:py-20 lg:py-32 sm:text-left flex flex-col bg-gradient-to-t from-black to-transparent sm:bg-gradient-to-t rounded-b-3xl sm:rounded-none sm:from-transparent sm:to-transparent sm:block">
           <h1 className="text-[40px] sm:text-6xl lg:text-7xl text-white font-bold italic leading-tight max-w-[90%]">
             &quot;We Handle,
             <br /> Your Travel&quot;
           </h1>
-          <p className="text-white mt-4 sm:mt-8 text-xs sm:text-base text-center sm:text-left max-w-[90%]">
+          <p className="text-white mt-2 sm:mt-8 text-xs sm:text-base sm:text-left max-w-[90%]">
             From your doorstep to your destination, we handle <br /> every bag
             with care.
           </p>
 
           <div className="w-full mt-4 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 justify-center sm:justify-start">
-            <div className="flex items-center gap-4 flex-wrap justify-center sm:justify-start">
+            <div className="flex items-center gap-4 flex-wrap sm:justify-start">
               <div className="size-6 sm:size-14 bg-[url('/Pic1.jpg')] bg-cover bg-no-repeat rounded-full border-[1px] sm:border-2 border-white"></div>
               <div className="size-6 sm:size-14 bg-[url('/Pic2.jpg')] bg-cover bg-no-repeat -ml-6 sm:-ml-10 rounded-full border-[1px] sm:border-2 border-white"></div>
               <div className="size-6 sm:size-14 bg-[url('/Pic3.jpg')] bg-cover bg-no-repeat -ml-6 sm:-ml-10 rounded-full border-[1px] sm:border-2 border-white"></div>
@@ -149,7 +204,7 @@ export default function Home() {
             </div>
             <Link
               href={"/book"}
-              className="rounded-3xl bg-primary py-2 px-8 sm:px-10 font-bold text-lg sm:text-base cursor-pointer hover:scale-105 active:scale-100 transition-all flex justify-center mt-10 mx-auto sm:m-0"
+              className="w-full sm:w-fit rounded-3xl bg-primary py-2 px-8 sm:px-10 font-bold text-lg sm:text-base cursor-pointer hover:scale-105 active:scale-100 transition-all flex justify-center mx-auto sm:m-0"
             >
               Book Now!
             </Link>
@@ -158,7 +213,7 @@ export default function Home() {
       </section>
 
       {/* Price Calculator */}
-      <div className="w-[90%] sm:w-[80%] lg:max-w-6xl mx-auto rounded-4xl bg-white py-8 px-10 md:px-16 lg:px-20 -mt-32 sm:-mt-20 flex flex-col gap-8 shadow-xl">
+      <div className="z-10 w-[90%] sm:w-[80%] lg:max-w-6xl mx-auto rounded-4xl bg-white py-8 px-10 md:px-16 lg:px-20 -mt-10 sm:-mt-20 flex flex-col gap-8 shadow-xl">
         <h2 className="text-xl sm:text-3xl font-semibold text-left sm:text-left">
           Price Calculator
         </h2>
