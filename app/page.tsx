@@ -31,6 +31,7 @@ export default function Home() {
 
   const [slides, setSlides] = useState(defaultSlides);
   const mainBannerCarouselRef = useRef<HTMLDivElement>(null);
+  const [mainBannerIndex, setMainBannerIndex] = useState(0);
 
   const serviceCarouselRef = useRef<HTMLDivElement>(null);
   const serviceCarouselIndexRef = useRef(0);
@@ -54,6 +55,8 @@ export default function Home() {
 
       return newSlides;
     });
+
+    setMainBannerIndex(0);
   };
 
   const prevBannerHandler = () => {
@@ -69,6 +72,8 @@ export default function Home() {
 
       return newSlides;
     });
+
+    setMainBannerIndex(0);
   };
 
   useEffect(() => {
@@ -207,6 +212,18 @@ export default function Home() {
             >
               Book Now!
             </Link>
+            <div className="sm:hidden h-2 w-full flex justify-center items-center gap-2 mt-1">
+              {mobileSlides.map((slide, i) => (
+                <button
+                  key={"Service Card nav btn" + i}
+                  className={`${
+                    slide === slides[0]
+                      ? "size-2.5 bg-primary"
+                      : "size-2 bg-[#FFF1CB]"
+                  } rounded-full transition-transform`}
+                ></button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
