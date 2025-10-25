@@ -1,7 +1,7 @@
 const CouponCard = () => {
   return (
     <>
-      <div className="hidden xl:flex h-[106px] w-[440px] items-center border-r-2 overflow-y-hidden">
+      <div className="hidden xl:flex h-[106px] w-[440px] items-center overflow-y-hidden">
         <div className="border-l-[1px] border-y-[1px] border-[#CECECE] p-[24px] rounded-l-lg -mr-[1px]">
           <p className="text-sm font-semibold">Do you have coupon ?</p>
           <div className="w-full flex mt-1">

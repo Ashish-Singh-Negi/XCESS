@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useState } from "react";
 
-const SigninPage = () => {
+const SignupPage = () => {
   const [eyeOpen, setEyeOpen] = useState(false);
 
   const [email, setEmail] = useState("");
@@ -70,26 +70,13 @@ const SigninPage = () => {
                 />
               )}
             </button>
-            <div className="text-sm text-[#5A5A5A] flex items-center justify-between gap-2 mt-2 px-3">
-              <div className="flex gap-2">
-                <div className="size-[18px] rounded-md border-[1px] border-[#C0C0C0]"></div>
-                <p>Remember me</p>
-              </div>
-
-              <Link
-                className="text-[#2D81FF] font-medium"
-                href={"/forget-pass"}
-              >
-                Forget Password ?
-              </Link>
-            </div>
           </div>
           <div className="flex flex-col gap-4 mt-6">
             <button
               type="submit"
               className="w-full py-3 rounded-3xl cursor-pointer active:scale-95 transition-transform bg-primary text-xl font-medium"
             >
-              Sign In
+              Sign up
             </button>
             <button
               type="button"
@@ -105,9 +92,9 @@ const SigninPage = () => {
             </button>
           </div>
           <p className="text-sm text-[#626262] text-center font-medium">
-            Don&apos;t have a account?{" "}
-            <Link href={"/signup"} className="text-[#2D81FF] cursor-pointer">
-              Sign up
+            Already have a account?{" "}
+            <Link href={"/signin"} className="text-[#2D81FF] cursor-pointer">
+              Sign in
             </Link>
           </p>
         </form>
@@ -115,4 +102,4 @@ const SigninPage = () => {
     </section>
   );
 };
-export default SigninPage;
+export default SignupPage;

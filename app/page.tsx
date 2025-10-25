@@ -4,7 +4,6 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 import { BiSolidQuoteAltLeft } from "react-icons/bi";
-import { GoPlus } from "react-icons/go";
 import { TiStarFullOutline } from "react-icons/ti";
 import { IoIosArrowForward } from "react-icons/io";
 
